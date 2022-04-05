@@ -1,0 +1,665 @@
+<div xmlns:th="http://www.thymeleaf.org">
+	<header
+		class="top_panel top_panel_custom top_panel_custom_2219 top_panel_custom_header-short-sticky without_bg_image">
+		<div
+			class="vc_row wpb_row vc_row-fluid vc_custom_1593164580341 sc_layouts_row sc_layouts_row_type_narrow sc_layouts_row_fixed sc_layouts_hide_on_mobile">
+			<div
+				class="wpb_column vc_column_container vc_col-sm-12 sc_layouts_column sc_layouts_column_align_center sc_layouts_column_icons_position_left">
+				<div class="vc_column-inner">
+					<div class="wpb_wrapper">
+						<div id="sc_content_2043841218"
+							class="sc_content color_style_default sc_content_default sc_content_width_1_1 sc_float_center">
+							<div class="sc_content_container">
+								<div
+									class="vc_row wpb_row vc_inner vc_row-fluid vc_row-o-equal-height vc_row-o-content-middle vc_row-flex">
+									<div
+										class="wpb_column vc_column_container vc_col-sm-3 vc_hidden-sm vc_col-xs-6 vc_hidden-xs sc_layouts_column sc_layouts_column_align_left sc_layouts_column_icons_position_left">
+										<div class="vc_column-inner">
+											<div class="wpb_wrapper">
+												<div
+													class="sc_layouts_item sc_layouts_hide_on_mobile sc_layouts_hide_on_tablet sc_layouts_hide_on_notebook">
+													<div id="sc_layouts_iconed_text_1240578523"
+														class="sc_layouts_iconed_text hide_on_notebook hide_on_tablet hide_on_mobile">
+														<a href="tel:+18001234567"
+															class="sc_layouts_item_link sc_layouts_iconed_text_link"><span
+															class="sc_layouts_item_icon sc_layouts_iconed_text_icon icon-untitled-10"></span><span
+															class="sc_layouts_item_details sc_layouts_iconed_text_details"><span
+																class="sc_layouts_item_details_line2 sc_layouts_iconed_text_line2">1-800-123-4567</span></span></a>
+													</div>
+												</div>
+												<div th:if="${#request.remoteUser}" class="sc_layouts_item">
+													<div id="sc_layouts_iconed_text_1917231107"
+														class="sc_layouts_iconed_text">
+														<a href=""
+															class="sc_layouts_item_link sc_layouts_iconed_text_link"><i
+															class="sc_form_field_icon trx_addons_icon-user-alt"></i><span
+															class="sc_layouts_item_details sc_layouts_iconed_text_details"><span
+																class="sc_layouts_item_details_line2 sc_layouts_iconed_text_line2"><span
+																	class="__cf_email__"
+																	data-cfemail="d8b1b6beb798a1b7adabb1acbdf6bbb7b5">&nbsp;
+																		[[${#request.remoteUser}]] </span></span></span></a>
+													</div>
+												</div>
+												<th:block th:if="${#request.remoteUser}">
+													<div id="sc_layouts_login_747777572"
+														class="sc_layouts_login sc_layouts_menu sc_layouts_menu_default">
+														<ul
+															class="sc_layouts_login_menu sc_layouts_menu_nav sc_layouts_menu_no_collapse">
+															<li class="menu-item"><a class="nav-link"
+																th:href="@{/order/list}"><span
+																	class="sc_layouts_item_details sc_layouts_login_details"><span
+																		class="sc_layouts_item_details_line1 sc_layouts_iconed_text_line1">My
+																			Account</span></span></a></li>
+															<li
+																th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}"
+																class="menu-item"><a class="nav-link"
+																th:href="@{/admin/home/index}"><span
+																	class="sc_layouts_item_details sc_layouts_login_details"><span
+																		class="sc_layouts_item_details_line1 sc_layouts_iconed_text_line1">App</span></span></a></li>
+														</ul>
+													</div>
+												</th:block>
+											</div>
+										</div>
+									</div>
+									<div
+										class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-9 vc_col-xs-6 vc_hidden-xs sc_layouts_column sc_layouts_column_align_right sc_layouts_column_icons_position_left">
+										<div class="vc_column-inner">
+											<div class="wpb_wrapper">
+												<div class="sc_layouts_item">
+													<div id="sc_layouts_search_176172326"
+														class="sc_layouts_search">
+														<div
+															class="search_wrap search_style_normal search_ajax layouts_search">
+															<div class="search_form_wrap">
+																<form role="search" method="get" class="search_form"
+																	action="http://honor.ancorathemes.com/">
+																	<input type="text" class="search_field"
+																		placeholder="Search" value="" name="s">
+																	<button type="submit"
+																		class="search_submit trx_addons_icon-search"></button>
+																</form>
+															</div>
+															<div class="search_results widget_area">
+																<a href="#"
+																	class="search_results_close trx_addons_icon-cancel"></a>
+																<div class="search_results_content"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="sc_layouts_item">
+													<th:block th:if="${#request.remoteUser}">
+														<div id="sc_layouts_login_747777572"
+															class="sc_layouts_login sc_layouts_menu sc_layouts_menu_default">
+															<ul
+																class="sc_layouts_login_menu sc_layouts_menu_nav sc_layouts_menu_no_collapse">
+																<li class="menu-item"><a class="nav-link"
+																	th:href="@{/security/logoff}"><span
+																		class="sc_layouts_item_icon sc_layouts_login_icon icon-untitled-15"></span><span
+																		class="sc_layouts_item_details sc_layouts_login_details"><span
+																			class="sc_layouts_item_details_line1 sc_layouts_iconed_text_line1">Sign
+																				Out</span></span></a></li>
+															</ul>
+														</div>
+													</th:block>
+													<th:block th:unless="${#request.remoteUser}">
+														<div id="sc_layouts_login_747777572"
+															class="sc_layouts_login sc_layouts_menu sc_layouts_menu_default">
+															<ul
+																class="sc_layouts_login_menu sc_layouts_menu_nav sc_layouts_menu_no_collapse">
+																<li class="menu-item"><a
+																	th:href="@{/security/login/form}"><span
+																		class="sc_layouts_item_icon sc_layouts_login_icon icon-untitled-15"></span><span
+																		class="sc_layouts_item_details sc_layouts_login_details"><span
+																			class="sc_layouts_item_details_line1 sc_layouts_iconed_text_line1">Login</span></span></a></li>
+															</ul>
+														</div>
+													</th:block>
+												</div>
+												<div th:replace="/layout/_cart.html"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div
+			class="vc_row wpb_row vc_row-fluid vc_custom_1593075732566 sc_layouts_row sc_layouts_row_type_normal">
+			<div
+				class="wpb_column vc_column_container vc_col-sm-12 sc_layouts_column_icons_position_left">
+				<div class="vc_column-inner">
+					<div class="wpb_wrapper">
+						<div id="sc_content_1683245530"
+							class="sc_content color_style_default sc_content_default sc_content_width_1_1 sc_float_center">
+							<div class="sc_content_container">
+								<div
+									class="vc_row wpb_row vc_inner vc_row-fluid vc_row-o-equal-height vc_row-o-content-middle vc_row-flex">
+									<div
+										class="wpb_column vc_column_container vc_col-sm-2 vc_col-md-3 vc_col-xs-5 sc_layouts_column sc_layouts_column_align_left sc_layouts_column_icons_position_left">
+										<div class="vc_column-inner">
+											<div class="wpb_wrapper">
+												<div class="sc_layouts_item">
+													<a href="http://localhost:8080/home"
+														id="sc_layouts_logo_740560680"
+														class="sc_layouts_logo sc_layouts_logo_default"><img
+														class="logo_image"
+														src="//honor.ancorathemes.com/wp-content/uploads/2018/02/logo.png"
+														alt="HONOR" width="141" height="53"></a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div
+										class="wpb_column vc_column_container vc_col-sm-10 vc_col-md-9 vc_col-xs-7 sc_layouts_column sc_layouts_column_align_right sc_layouts_column_icons_position_left">
+										<div class="vc_column-inner">
+											<div class="wpb_wrapper">
+												<div
+													class="sc_layouts_item sc_layouts_hide_on_tablet sc_layouts_hide_on_notebook sc_layouts_hide_on_desktop">
+													<div id="sc_layouts_cart_1732577091"
+														class="sc_layouts_cart hide_on_desktop hide_on_notebook hide_on_tablet">
+														<span
+															class="sc_layouts_item_icon sc_layouts_cart_icon icon-untitled-16"></span>
+														<span
+															class="sc_layouts_item_details sc_layouts_cart_details">
+															<span
+															class="sc_layouts_item_details_line2 sc_layouts_cart_totals">
+																<span class="sc_layouts_cart_items">0 items</span>
+														</span>
+														</span> <span class="sc_layouts_cart_items_short">0</span>
+														<div class="sc_layouts_cart_widget widget_area">
+															<span
+																class="sc_layouts_cart_widget_close trx_addons_icon-cancel"></span>
+															<div class="widget woocommerce widget_shopping_cart">
+																<div class="widget_shopping_cart_content"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="sc_layouts_item">
+													<nav
+														class="sc_layouts_menu sc_layouts_menu_default sc_layouts_menu_dir_horizontal menu_hover_fade hide_on_mobile"
+														id="sc_layouts_menu_92647178">
+														<ul id="sc_layouts_menu_834846456"
+															class="sc_layouts_menu_nav">
+															<li id="menu-item-146"
+																class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-146">
+																<a href="/"><span>Home</span></a>
+
+															</li>
+															<li id="menu-item-136"
+																class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-136">
+																<a href="#"><span>Pages</span></a>
+																<ul class="sub-menu">
+																	<li id="menu-item-134"
+																		class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-134">
+																		<a href="#"><span>Gunsmith</span></a>
+																		<ul class="sub-menu">
+																			<li id="menu-item-125"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-125">
+																				<a href="http://honor.ancorathemes.com/services-1/"><span>Services
+																						1</span></a>
+																			</li>
+																			<li id="menu-item-126"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-126">
+																				<a href="http://honor.ancorathemes.com/services-2/"><span>Services
+																						2</span></a>
+																			</li>
+																		</ul>
+																	</li>
+																	<li id="menu-item-129"
+																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129">
+																		<a href="http://honor.ancorathemes.com/showroom/"><span>Showroom</span></a>
+																	</li>
+																	<li id="menu-item-118"
+																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-118">
+																		<a href="http://honor.ancorathemes.com/memberships/"><span>Memberships</span></a>
+																	</li>
+																	<li id="menu-item-116"
+																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116">
+																		<a href="http://honor.ancorathemes.com/instruction/"><span>Instruction</span></a>
+																	</li>
+																	<li id="menu-item-124"
+																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-124">
+																		<a href="http://honor.ancorathemes.com/range/"><span>Range</span></a>
+																	</li>
+																	<li id="menu-item-139"
+																		class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-139">
+																		<a href="#"><span>About</span></a>
+																		<ul class="sub-menu">
+																			<li id="menu-item-100"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-100">
+																				<a
+																				href="http://honor.ancorathemes.com/about-1-blog/"><span>About
+																						1 (Blog)</span></a>
+																			</li>
+																			<li id="menu-item-101"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101">
+																				<a
+																				href="http://honor.ancorathemes.com/about-2-store/"><span>About
+																						2 (Store)</span></a>
+																			</li>
+																			<li id="menu-item-102"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-102">
+																				<a
+																				href="http://honor.ancorathemes.com/about-3-club/"><span>About
+																						3 (Club)</span></a>
+																			</li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+															<li id="menu-item-135"
+																class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-135">
+																<a href="#"><span>Features</span></a>
+																<ul class="sub-menu">
+																	<li id="menu-item-131"
+																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-131">
+																		<a href="http://honor.ancorathemes.com/typography/"><span>Typography</span></a>
+																	</li>
+																	<li id="menu-item-128"
+																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-128">
+																		<a href="http://honor.ancorathemes.com/shortcodes/"><span>Shortcodes</span></a>
+																	</li>
+																	<li id="menu-item-1505"
+																		class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1505">
+																		<a href="/appointments/"><span>Appointments</span></a>
+																	</li>
+																	<li id="menu-item-145"
+																		class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-145">
+																		<a href="#"><span>Events</span></a>
+																		<ul class="sub-menu">
+																			<li id="menu-item-120"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-120">
+																				<a href="http://honor.ancorathemes.com/events/"><span>Events</span></a>
+																			</li>
+																			<li id="menu-item-111"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111">
+																				<a href="http://honor.ancorathemes.com/events-2/"><span>Events
+																						2</span></a>
+																			</li>
+																		</ul>
+																	</li>
+																	<li id="menu-item-144"
+																		class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-144">
+																		<a href="#"><span>Gallery</span></a>
+																		<ul class="sub-menu">
+																			<li id="menu-item-112"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112">
+																				<a href="http://honor.ancorathemes.com/grid/"><span>Grid</span></a>
+																			</li>
+																			<li id="menu-item-117"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-117">
+																				<a href="http://honor.ancorathemes.com/masonry/"><span>Masonry</span></a>
+																			</li>
+																			<li id="menu-item-109"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109">
+																				<a href="http://honor.ancorathemes.com/cobbles/"><span>Cobbles</span></a>
+																			</li>
+																		</ul>
+																	</li>
+																	<li id="menu-item-2116"
+																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2116">
+																		<a href="http://honor.ancorathemes.com/service-plus/"><span>Service
+																				Plus</span></a>
+																	</li>
+																	<li id="menu-item-2113"
+																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2113">
+																		<a
+																		href="http://honor.ancorathemes.com/privacy-policy/"><span>Privacy
+																				Policy</span></a>
+																	</li>
+																</ul>
+															</li>
+															<li id="menu-item-1506"
+																class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1506">
+																<a href="/our-classes/"><span>Classes</span></a>
+															</li>
+															<li id="menu-item-140"
+																class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-140">
+																<a href="#"><span>Blog</span></a>
+																<ul class="sub-menu">
+																	<li id="menu-item-141"
+																		class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-141">
+																		<a href="#"><span>Classic</span></a>
+																		<ul class="sub-menu">
+																			<li id="menu-item-106"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-106">
+																				<a href="http://honor.ancorathemes.com/classic-1/"><span>Classic
+																						1</span></a>
+																			</li>
+																			<li id="menu-item-107"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107">
+																				<a href="http://honor.ancorathemes.com/classic-2/"><span>Classic
+																						2</span></a>
+																			</li>
+																			<li id="menu-item-108"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-108">
+																				<a href="http://honor.ancorathemes.com/classic-3/"><span>Classic
+																						3</span></a>
+																			</li>
+																		</ul>
+																	</li>
+																	<li id="menu-item-142"
+																		class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-142">
+																		<a href="#"><span>Chess</span></a>
+																		<ul class="sub-menu">
+																			<li id="menu-item-103"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103">
+																				<a href="http://honor.ancorathemes.com/chess-2/"><span>Chess
+																						2</span></a>
+																			</li>
+																			<li id="menu-item-104"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-104">
+																				<a href="http://honor.ancorathemes.com/chess-4/"><span>Chess
+																						4</span></a>
+																			</li>
+																			<li id="menu-item-105"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-105">
+																				<a href="http://honor.ancorathemes.com/chess-6/"><span>Chess
+																						6</span></a>
+																			</li>
+																		</ul>
+																	</li>
+																	<li id="menu-item-143"
+																		class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-143">
+																		<a href="#"><span>Portfolio</span></a>
+																		<ul class="sub-menu">
+																			<li id="menu-item-121"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-121">
+																				<a href="http://honor.ancorathemes.com/portfolio-2/"><span>Portfolio
+																						2</span></a>
+																			</li>
+																			<li id="menu-item-122"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-122">
+																				<a href="http://honor.ancorathemes.com/portfolio-3/"><span>Portfolio
+																						3</span></a>
+																			</li>
+																			<li id="menu-item-123"
+																				class="menu-item menu-item-type-post_type menu-item-object-page menu-item-123">
+																				<a href="http://honor.ancorathemes.com/portfolio-4/"><span>Portfolio
+																						4</span></a>
+																			</li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+															<li id="menu-item-2270"
+																class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-has-children-layout menu-item-2270">
+																<a href="#"><span>Shop</span></a>
+																<ul class="sc_layouts_submenu" style="display: none;">
+																	<li class="sc_layouts_submenu_wrap">
+																		<div class="vc_row wpb_row vc_row-fluid">
+																			<div
+																				class="wpb_column vc_column_container vc_col-sm-4 sc_layouts_column_icons_position_left">
+																				<div class="vc_column-inner">
+																					<div class="wpb_wrapper">
+																						<div class="sc_layouts_item">
+																							<div id="sc_title_1742136900"
+																								class="sc_title color_style_default sc_title_default  vc_custom_1599743957628">
+																								<h4
+																									class="sc_item_title sc_title_title sc_align_left sc_item_title_style_default sc_item_title_tag">
+																									Shop Pages</h4>
+																							</div>
+																						</div>
+																						<div class="sc_layouts_item">
+																							<nav
+																								class="sc_layouts_menu sc_layouts_menu_default sc_layouts_menu_dir_vertical menu_hover_fade"
+																								id="sc_layouts_menu_606602653">
+																								<ul id="sc_layouts_menu_796497461"
+																									class="sc_layouts_menu_nav">
+																									<li id="menu-item-2271"
+																										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2271">
+																										<a href="http://honor.ancorathemes.com/shop/"><span>Shop
+																												Default</span></a>
+																									</li>
+																									<li id="menu-item-2273"
+																										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2273">
+																										<a
+																										href="http://honor.ancorathemes.com/home-2-store/"><span>Shop
+																												&#8211; Home 1</span></a>
+																									</li>
+																									<li id="menu-item-2272"
+																										class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-2272">
+																										<a
+																										href="http://honor.ancorathemes.com/home-4-store/"
+																										aria-current="page"><span>Shop
+																												&#8211; Home 2</span></a>
+																									</li>
+																									<li id="menu-item-2275"
+																										class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2275">
+																										<a
+																										href="/product/lwrc-ic-spr-rifle-223-rem-5-56-nato-30-rds-14-7/"><span>Single
+																												Product &#8211; Simple</span></a>
+																									</li>
+																									<li id="menu-item-2276"
+																										class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2276">
+																										<a href="/product/hunting-hat/"><span>SIngle
+																												Product &#8211; Variable</span></a>
+																									</li>
+																									<li id="menu-item-2278"
+																										class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2278">
+																										<a href="/cart/"><span>Shopping
+																												Cart</span></a>
+																									</li>
+																									<li id="menu-item-2279"
+																										class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2279">
+																										<a href="/checkout/"><span>Checkout</span></a>
+																									</li>
+																								</ul>
+																							</nav>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div
+																				class="wpb_column vc_column_container vc_col-sm-4 sc_layouts_column_icons_position_left">
+																				<div class="vc_column-inner">
+																					<div class="wpb_wrapper">
+																						<div class="sc_layouts_item">
+																							<div id="sc_title_1923247722"
+																								class="sc_title color_style_default sc_title_default  vc_custom_1599744000539">
+																								<h4
+																									class="sc_item_title sc_title_title sc_align_left sc_item_title_style_default sc_item_title_tag">
+																									Categories</h4>
+																							</div>
+																						</div>
+																						<div class="sc_layouts_item">
+																							<nav
+																								class="sc_layouts_menu sc_layouts_menu_default sc_layouts_menu_dir_vertical menu_hover_fade"
+																								id="sc_layouts_menu_480827791">
+																								<ul id="sc_layouts_menu_366730162"
+																									class="sc_layouts_menu_nav">
+																									<li id="menu-item-2280"
+																										class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2280">
+																										<a
+																										href="http://honor.ancorathemes.com/product-category/accessories/"><span>Accessories</span></a>
+																									</li>
+																									<li id="menu-item-2281"
+																										class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2281">
+																										<a
+																										href="http://honor.ancorathemes.com/product-category/ammunition/"><span>Ammunition</span></a>
+																									</li>
+																									<li id="menu-item-2282"
+																										class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2282">
+																										<a
+																										href="http://honor.ancorathemes.com/product-category/handguns/"><span>Handguns</span></a>
+																									</li>
+																									<li id="menu-item-2283"
+																										class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2283">
+																										<a
+																										href="http://honor.ancorathemes.com/product-category/knives/"><span>Knives</span></a>
+																									</li>
+																									<li id="menu-item-2284"
+																										class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2284">
+																										<a
+																										href="http://honor.ancorathemes.com/product-category/optics/"><span>Optics</span></a>
+																									</li>
+																									<li id="menu-item-2285"
+																										class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2285">
+																										<a
+																										href="http://honor.ancorathemes.com/product-category/rifles/"><span>Rifles</span></a>
+																									</li>
+																									<li id="menu-item-2286"
+																										class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2286">
+																										<a
+																										href="http://honor.ancorathemes.com/product-category/shotguns/"><span>Shotguns</span></a>
+																									</li>
+																									<li id="menu-item-2287"
+																										class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2287">
+																										<a
+																										href="http://honor.ancorathemes.com/product-category/silencers/"><span>Silencers</span></a>
+																									</li>
+																								</ul>
+																							</nav>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div
+																				class="wpb_column vc_column_container vc_col-sm-4 vc_hidden-xs sc_layouts_column_icons_position_left">
+																				<div class="vc_column-inner">
+																					<div class="wpb_wrapper">
+																						<div class="sc_layouts_item">
+																							<div id="sc_title_1310563301"
+																								class="sc_title color_style_default sc_title_default  vc_custom_1599744029431">
+																								<h4
+																									class="sc_item_title sc_title_title sc_align_left sc_item_title_style_default sc_item_title_tag">
+																									Recent Products</h4>
+																							</div>
+																						</div>
+																						<div class="sc_layouts_item">
+																							<div id="widget_slider_1929098825"
+																								class="widget_area sc_widget_slider vc_widget_slider wpb_content_element">
+																								<aside id="widget_slider_1929098825_widget"
+																									class="widget widget_slider">
+																									<div class="slider_wrap slider_engine_swiper">
+																										<div id="widget_slider_1929098825_outer"
+																											class="slider_outer slider_swiper_outer slider_style_modern slider_outer_direction_horizontal slider_outer_one slider_outer_pagination slider_outer_pagination_bullets slider_outer_pagination_pos_bottom slider_outer_nocontrols slider_outer_titles_bottom">
+																											<div id="widget_slider_1929098825_swiper"
+																												class="slider_container slider_swiper swiper-slider-container slider_nocontrols slider_titles_bottom slider_resize slider_height_auto slider_direction_horizontal slider_pagination slider_pagination_bullets slider_pagination_pos_bottom slider_one slider_type_bg"
+																												data-ratio="3:4" data-interval="7000"
+																												data-effect="slide"
+																												data-pagination="bullets"
+																												data-direction="horizontal"
+																												data-slides-per-view="1"
+																												data-slides-space="0"
+																												data-slides-min-width="150">
+																												<div class="slider-wrapper swiper-wrapper">
+																													<div class="slider-slide swiper-slide"
+																														data-image="http://honor.ancorathemes.com/wp-content/uploads/2017/11/shop-7-copyright.jpg"
+																														data-cats="&lt;a href=&quot;http://honor.ancorathemes.com/?taxonomy=product_type&#038;term=simple&quot; title=&quot;View all posts in simple&quot;&gt;simple&lt;/a&gt;"
+																														data-title="LWRC IC-SPR Rifle 223 Rem, 5.56 NATO 30 RDS 14.7&#8243;"
+																														data-date="November 30, 2017"
+																														style="background-image: url(http://honor.ancorathemes.com/wp-content/uploads/2017/11/shop-7-copyright.jpg);">
+																														<div
+																															class="slide_overlay slide_overlay_small">
+																														</div>
+																														<div class="slide_info slide_info_small">
+																															<h3 class="slide_title">
+																																<a
+																																	href="http://honor.ancorathemes.com/product/lwrc-ic-spr-rifle-223-rem-5-56-nato-30-rds-14-7/">LWRC
+																																	IC-SPR Rifle 223 Rem, 5.56 NATO 30 RDS
+																																	14.7&#8243;</a>
+																															</h3>
+																															<div class="slide_cats">
+																																<a
+																																	href="http://honor.ancorathemes.com/?taxonomy=product_type&#038;term=simple"
+																																	title="View all posts in simple">simple</a>
+																															</div>
+																														</div>
+																													</div>
+																													<div class="slider-slide swiper-slide"
+																														data-image="http://honor.ancorathemes.com/wp-content/uploads/2017/12/shop-15-copyright.jpg"
+																														data-cats="&lt;a href=&quot;http://honor.ancorathemes.com/?taxonomy=product_type&#038;term=simple&quot; title=&quot;View all posts in simple&quot;&gt;simple&lt;/a&gt;"
+																														data-title="LWRC IC-SPR FDE Rifle 223 Rem, 5.56 NATO 32 RDS 14.7&#8243;"
+																														data-date="October 4, 2017"
+																														style="background-image: url(http://honor.ancorathemes.com/wp-content/uploads/2017/12/shop-15-copyright.jpg);">
+																														<div
+																															class="slide_overlay slide_overlay_small">
+																														</div>
+																														<div class="slide_info slide_info_small">
+																															<h3 class="slide_title">
+																																<a
+																																	href="http://honor.ancorathemes.com/product/lwrc-ic-spr-fde-rifle-223-rem-5-56-nato-32-rds-14-7/">LWRC
+																																	IC-SPR FDE Rifle 223 Rem, 5.56 NATO 32
+																																	RDS 14.7&#8243;</a>
+																															</h3>
+																															<div class="slide_cats">
+																																<a
+																																	href="http://honor.ancorathemes.com/?taxonomy=product_type&#038;term=simple"
+																																	title="View all posts in simple">simple</a>
+																															</div>
+																														</div>
+																													</div>
+																													<div class="slider-slide swiper-slide"
+																														data-image="http://honor.ancorathemes.com/wp-content/uploads/2017/12/shop-14-copyright.jpg"
+																														data-cats="&lt;a href=&quot;http://honor.ancorathemes.com/?taxonomy=product_type&#038;term=simple&quot; title=&quot;View all posts in simple&quot;&gt;simple&lt;/a&gt;"
+																														data-title="Sig Sauer SIGM400 Enhanced OD Rifle 300 AAC"
+																														data-date="October 4, 2017"
+																														style="background-image: url(http://honor.ancorathemes.com/wp-content/uploads/2017/12/shop-14-copyright.jpg);">
+																														<div
+																															class="slide_overlay slide_overlay_small">
+																														</div>
+																														<div class="slide_info slide_info_small">
+																															<h3 class="slide_title">
+																																<a
+																																	href="http://honor.ancorathemes.com/product/sig-sauer-sigm400-enhanced-od-green-rifle-300-aac/">Sig
+																																	Sauer SIGM400 Enhanced OD Rifle 300 AAC</a>
+																															</h3>
+																															<div class="slide_cats">
+																																<a
+																																	href="http://honor.ancorathemes.com/?taxonomy=product_type&#038;term=simple"
+																																	title="View all posts in simple">simple</a>
+																															</div>
+																														</div>
+																													</div>
+																												</div>
+																												<div
+																													class="slider_pagination_wrap swiper-pagination">
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																								</aside>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																</ul>
+															</li>
+															<li id="menu-item-110"
+																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110">
+																<a href="http://honor.ancorathemes.com/contact-us/"><span>Contact
+																		Us</span></a>
+															</li>
+														</ul>
+													</nav>
+													<div
+														class="sc_layouts_iconed_text sc_layouts_menu_mobile_button">
+														<a
+															class="sc_layouts_item_link sc_layouts_iconed_text_link"
+															href="#"> <span
+															class="sc_layouts_item_icon sc_layouts_iconed_text_icon trx_addons_icon-menu"></span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>

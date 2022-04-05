@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<main>
+		<div class="content_wrap">
+
+			<div class="content">
+
+				<article
+					class="post_item_single post_type_page post-784 page type-page status-publish hentry">
+					<h3>Đơn Hàng Của BẠN</h3>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>Order No.</th>
+								<th>Order Date</th>
+								<th>Shipping Address</th>
+								<th>Status</th>
+								<th>Acction</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="order,state: ${orders}">
+								<td>&nbsp; [[${state.index}]]</td>
+								<td>&nbsp;[[${order.id}]]</td>
+								<td>[[${order.createDate}]]</td>
+								<td>&nbsp; [[${order.address}]]</td>
+								<td>&nbsp; [[${order.trangthai}]]</td>
+								<td><a th:href="@{|/order/detail/${order.id}|}"
+									class="btn btn-default"> <i class="fas fa-search"></i></b>
+								</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</article>
+			</div>
+
+			<div class="sidebar left widget_area" role="complementary">
+				<form th:action="@{/home/account/update}" method="post"
+					th:object="${account}">
+					<div class="col-1">
+
+						<div class="woocommerce-billing-fields">
+							<h3>Thông Tin Tài Khoản</h3>
+							<div th:text="${message}"
+								style="color: red; font-variant: inherit; font-style: italic;"></div>
+							<div th:each="acc:${account}"
+								class="woocommerce-billing-fields__field-wrapper">
+
+
+								<p class="form-row form-row-first validate-required">
+									<label for="billing_first_name" class="">Username&nbsp;<abbr
+										class="required" title="required">*</abbr></label><span
+										class="woocommerce-input-wrapper"><br /> <input
+										type="text" class="input-text fill_inited"
+										th:field="*{username}" placeholder=""
+										th:value="${acc.username}" autocomplete="given-name"
+										readonly="readonly"></span>
+								</p>
+								<p class="form-row form-row-first validate-required">
+									<label for="billing_first_name" class="">Password&nbsp;<abbr
+										class="required" title="required">*</abbr></label><span
+										class="woocommerce-input-wrapper"><br /> <input
+										type="text" class="input-text fill_inited"
+										th:field="*{password}" placeholder=""
+										th:value="${acc.password}" autocomplete="given-name"></span>
+								</p>
+								<p class="form-row form-row-first validate-required">
+									<label for="billing_first_name" class="">Fullname&nbsp;<abbr
+										class="required" title="required">*</abbr></label><span
+										class="woocommerce-input-wrapper"> <br> <input
+										type="text" class="input-text fill_inited"
+										th:field="*{fullname}" placeholder=""
+										th:value="${acc.fullname}" autocomplete="given-name"></span>
+								</p>
+								<p class="form-row form-row-first validate-required">
+									<label for="billing_first_name" class="">Email&nbsp;<abbr
+										class="required" title="required">*</abbr></label><span
+										class="woocommerce-input-wrapper"> <br> <input
+										type="text" class="input-text fill_inited" th:field="*{email}"
+										placeholder="" th:value="${acc.email}"
+										autocomplete="given-name"></span>
+								</p>
+								<p class="form-row form-row-first validate-required">
+									<label for="billing_first_name" class="">Phone&nbsp;<abbr
+										class="required" title="required">*</abbr></label><span
+										class="woocommerce-input-wrapper"> <br> <input
+										type="text" class="input-text fill_inited" th:field="*{phone}"
+										placeholder="" th:value="${acc.phone}"
+										autocomplete="given-name"></span>
+								</p>
+								<p class="form-row form-row-first validate-required">
+									<label for="billing_first_name" class="">Address&nbsp;<abbr
+										class="required" title="required">*</abbr></label><span
+										class="woocommerce-input-wrapper"> <br> <input
+										type="text" class="input-text fill_inited"
+										th:field="*{address}" th:value="${acc.address}"
+										autocomplete="given-name"></span>
+								</p>
+
+								<div class="wc-proceed-to-checkout">
+
+									<button class="btn btn-primary">
+										 <span th:if="@{category.isEdit}">Update</span>
+
+									</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+	</main>
+</body>
+</html>

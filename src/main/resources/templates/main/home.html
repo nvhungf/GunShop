@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<main>
+		<div class="content_wrap">
+			<div class="content">
+				<div th:replace="/product/_product_list.html"></div>
+			</div>
+			<div class="sidebar left widget_area" role="complementary">
+				<div class="sidebar_inner">
+					<aside id="woocommerce_product_categories-2"
+						class="widget woocommerce widget_product_categories">
+						<h5 class="widget_title">Categories</h5>
+						<div th:replace="/category/_category.html"></div>
+					</aside>
+					<aside id="woocommerce_price_filter-2"
+						class="widget woocommerce widget_price_filter">
+						<h5 class="widget_title">Filter by price</h5>
+						<div th:replace="/category/_fitler.html"></div>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

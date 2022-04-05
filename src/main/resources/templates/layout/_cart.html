@@ -1,0 +1,20 @@
+<div xmlns:th="http://www.thymeleaf.org">
+	<div class="sc_layouts_item">
+		<a th:href="@{/cart/view}"><div id="" class="sc_layouts_cart">
+			 <span
+				class="sc_layouts_item_icon sc_layouts_cart_icon icon-untitled-16"></span>
+				<span class="sc_layouts_item_details sc_layouts_cart_details">
+					<span class="sc_layouts_item_details_line1 sc_layouts_cart_label">Cart:</span>
+					<span class="sc_layouts_item_details_line2 sc_layouts_cart_totals">
+						<span class="sc_layouts_cart_items">{{cart.count}} items</span>
+				</span>
+			</span> <span class="sc_layouts_cart_items_short"></span>
+				<div class="sc_layouts_cart_widget widget_area">
+					<span class="sc_layouts_cart_widget_close trx_addons_icon-cancel"></span>
+			<div class="widget woocommerce widget_shopping_cart">
+				<div class="widget_shopping_cart_content"></div>
+			</div>
+		</div>
+	</div></a>
+</div>
+</div>

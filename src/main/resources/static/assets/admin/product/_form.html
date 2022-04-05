@@ -1,0 +1,101 @@
+
+<div class="panel panel-default">
+	<div class="panel-heading text-center">PRODUCT EDITION</div>
+	<div class="panel-body pt-3">
+		<div class="row main__form">
+			<div class="col-sm-4 text-center">
+				<label for="image"> <img
+					ng-src="{{'/assets/images/' + form.image}}"
+					style="max-width: 100%; height: 50%;">
+				</label>
+			</div>
+			<div class="col-sm-8">
+				<form name="userForm" novalidate>
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<input ng-model="form.name" class="form-control"
+								placeholder="Product Name" name="name" required > 
+								<label for="firstName">Name</label>
+								<span style="color:red">{{msgName}}</span>
+								<div ng-show="userForm.name.$dirty && userForm.name.$invalid" class="text-danger">
+									<i class="fa fa-times text-danger"></i>
+									<span ng-show="userForm.name.$error.required">
+									  Name is Required
+									</span>
+								</div>
+								
+						</div>
+						
+						<div class="form-group col-sm-6">
+							<input ng-model="form.price" class="form-control"
+								placeholder="Product Price" name="price" required> <label for="firstName">Price</label>
+								<span style="color:red">{{msgPrice}}</span>
+								<div ng-show="userForm.price.$dirty && userForm.price.$invalid" class="text-danger">
+									<i class="fa fa-times text-danger"></i>
+									<span ng-show="userForm.price.$error.required">
+									  Price is Required
+									</span>
+								</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<div class="title-vip">Image</div>
+							<input type="file" class="form-control" id="image" 
+								onchange="angular.element(this).scope().imageChanged(this.files)">
+								<span style="color:red">{{msgImage}}</span><br />
+						</div>
+						<div class="form-group col-sm-6">
+							<div class="title-vip">Category</div>
+							<select ng-model="form.category.id" class="form-control" name="category" required
+							ng-init="form.category.id=''">
+								<option selected value=''>-- Select Category --</option>
+								<option ng-repeat="c in cates" ng-value="c.id">{{c.name}}</option>
+							</select>
+							<span style="color:red">{{msgCategory}}</span><br />
+						
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<div class="title-vip">Create Date</div>
+							<input ng-model="form.createDate" type="date" class="form-control" name="date" required>
+							
+						</div>
+						<div class="form-group col-sm-6">
+							<div class="title-vip">Available?</div>
+							<div class="form-control d-flex align-items-center">
+								<input ng-model="form.available" ng-value="true" name="available"
+									type="radio">
+								<div>&nbsp;&nbsp;Yes</div>
+								&nbsp;&nbsp; <input ng-model="form.available" ng-value="false"
+									name="available" type="radio">
+								<div>&nbsp;&nbsp;No</div>
+								<span style="color:red">&nbsp;{{msgAvailable}}</span>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+	<div class="panel-fotter text-center">
+		<button  ng-click="create()" 
+			class="btn btn-primary btn-raised shadow my-button w-xs">
+			<b class="far fa-plus-square"></b> Create
+		</button>
+		<button ng-click="update()"
+			class="btn btn-success btn-raised shadow my-button w-xs">
+			<b class="far fa-edit"></b> Update
+		</button>
+		<button ng-click="delete(form)"
+			class="btn btn-danger btn-raised shadow my-button w-xs">
+			<b class="far fa-trash-alt"></b> Delete
+		</button>
+		<button ng-click="reset()"
+			class="btn btn-info btn-raised shadow my-button w-xs">
+			<b class="fas fa-redo-alt"></b> Reset
+		</button>
+	</div>
+</div>

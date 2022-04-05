@@ -1,0 +1,85 @@
+<div xmlns:th="http://www.thymeleaf.org">
+	<div class="list_products shop_mode_list">
+		<div class="list_products_header">
+			<nav class="woocommerce-breadcrumb">
+				<a href="http://honor.ancorathemes.com">Home</a>&nbsp;&#47;&nbsp;Accessories
+			</nav>
+			<header class="woocommerce-products-header">
+				<h1 class="woocommerce-products-header__title page-title">Accessories</h1>
+			</header>
+		</div>
+		<div class="woocommerce-notices-wrapper"></div>
+		<div class="honor_shop_mode_buttons">
+			<form
+				action="http://honor.ancorathemes.com/product-category/accessories"
+				method="post">
+				<input type="hidden" name="honor_shop_mode" value="list" /> <a
+					href="#" class="woocommerce_thumbs icon-th"
+					title="Show products as thumbs"></a> <a href="#"
+					class="woocommerce_list icon-th-list" title="Show products as list"></a>
+			</form>
+		</div>
+		<p class="woocommerce-result-count">Showing all 8 results</p>
+		<form class="woocommerce-ordering" method="get">
+			<select name="orderby" class="orderby" aria-label="Shop order">
+				<option value="popularity">Sort by popularity</option>
+				<option value="rating">Sort by average rating</option>
+				<option value="date" selected='selected'>Sort by latest</option>
+				<option value="price">Sort by price: low to high</option>
+				<option value="price-desc">Sort by price: high to low</option>
+			</select> <input type="hidden" name="paged" value="1" /> <input type="hidden"
+				name="q" value="/product-category/accessories/" />
+		</form>
+		<ul class="products columns-2">
+			<li th:each="p:${items}"  class="product type-product post-2244 status-publish first instock product_cat-accessories product_tag-accessories has-post-thumbnail shipping-taxable purchasable product-type-variable">
+				<div class="post_item post_layout_list">
+					<div class="shop-preview-container">
+						<div class="post_featured hover_none">
+							<a th:href="@{|/product/detail/${p.id}|}">
+								<img width="362" height="362"
+								th:src="@{|/assets/images/${p.image}|}"
+								class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+								alt="" loading="lazy"
+								sizes="(max-width: 362px) 100vw, 362px" />
+							</a>
+						</div>
+						<div class="post_data">
+							<div class="post_data_inner">
+								<div class="post_header entry-header">
+									<h2 class="woocommerce-loop-product__title">
+										<a th:href="@{|/product/detail/${p.id}|}" th:utext=${p.name}></a>
+									</h2>
+								</div>
+								<div class="post_data_price">
+									<span class="price"><span class="prefix">from: </span><span
+										class="woocommerce-Price-amount amount"><bdi>
+											<span class="woocommerce-Price-currencySymbol">&#36;</span>[[${p.price}]]<span
+												class="decimals">00</span></bdi> </span> </span> 
+												<button rel="nofollow"
+										th:attr="ng-click=@{|cart.add(${p.id})|}"
+										aria-hidden="true" 
+										class="shop_cart icon-untitled-16 button add_to_cart_button product_type_variable product_in_stock"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post_content entry-content">
+						<p>Nisl nibh dui et diam, sit adipiscing suspendisse
+							ridiculus. Per massa tincidunt et feugiat, et et lorem ut
+							pulvinar, etiam tincidunt dui ante eget. Pede faucibus sed
+							ultricies per nec tellus. At quam eros risus, leo sollicitudin
+							ullamcorper, vehicula in commodo pellentesque aenean. Ut massa
+							quia ut ultrices suspendisse. Tortor sed primis odio, justo ut
+							nulla auctor ad sem velit. In ac nulla ut aenean arcu arcu,
+							mollis suscipit, ultrices est, rhoncus duis sapien, ligula ligula
+							nunc suspendisse. Et faucibus erat. Habitant eget inceptos,
+							eligendi lacus viverra fringilla, pellentesque vestibulum, nunc
+							maecenas maecenas.</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+

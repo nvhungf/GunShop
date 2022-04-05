@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+	<main th:object="${order}">
+		<div class="content_wrap">
+
+			<div class="content">
+				
+				<article
+					class="post_item_single post_type_page post-784 page type-page status-publish hentry">
+					<h3>chi tiết Đơn Hàng </h3>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>NAME</th>
+								<th>PRICE</th>
+								<th>QUANTITY</th>
+								<th>AMOUNT</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="detail: *{orderDetails}" th:object="${detail}">
+								<td>[[*{product.id}]]</td>
+								<td>[[*{product.name}]]</td>
+								<td>$[[*{#numbers.formatDecimal(price, 0, 'COMMA', 2,
+									'POINT')}]]</td>
+								<td>[[*{quantity}]]</td>
+								<td>$[[*{#numbers.formatDecimal(price * quantity, 0,
+									'COMMA', 2, 'POINT')}]]</td>
+							</tr>
+							<tr th:each="detail: *{orderDetails}" th:object="${detail}">
+								<div th:if="@{${detailStat.index} == 0}">
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="font-weight-bold"><strong>TOTAL</strong></td>
+									<td>$[[*{total}]]</td>
+								</div>
+								
+								
+							</tr>
+						</tbody>
+					</table>
+				</article>
+			</div>
+
+			<div class="sidebar left widget_area" role="complementary"></div>
+			<div class="col-1">
+				<div class="woocommerce-billing-fields">
+					<h3>Thông Tin đơn Hàng</h3>
+					<div th:text="${message}" style="color: red; font-variant: inherit; font-style: italic;"></div>
+					<div 
+						class="woocommerce-billing-fields__field-wrapper">
+						<p class="form-row form-row-first validate-required"
+							id="billing_first_name_field" data-priority="10">
+							<label for="billing_first_name" class="">ID&nbsp;<abbr
+								class="required" title="required">*</abbr></label><span
+								class="woocommerce-input-wrapper"><br /> <input
+								type="text" class="input-text fill_inited"
+								name="billing_first_name" id="billing_first_name" placeholder=""
+								th:field="*{id}" autocomplete="given-name"
+								readonly="readonly"></span>
+						</p>
+						<p class="form-row form-row-first validate-required"
+							id="billing_first_name_field" data-priority="10">
+							<label for="billing_first_name" class="">Username&nbsp;<abbr
+								class="required" title="required">*</abbr></label><span
+								class="woocommerce-input-wrapper"><br /> <input
+								type="text" class="input-text fill_inited"
+								name="billing_first_name" id="billing_first_name" placeholder=""
+								th:field="*{account.username}" readonly="readonly" autocomplete="given-name"></span>
+						</p>
+						<p class="form-row form-row-first validate-required"
+							id="billing_first_name_field" data-priority="10">
+							<label for="billing_first_name" class="">Create Date&nbsp;<abbr
+								class="required" title="required">*</abbr></label><span
+								class="woocommerce-input-wrapper"> <br> <input
+								type="text" class="input-text fill_inited"
+								name="billing_first_name" id="billing_first_name" placeholder=""
+								th:field="*{createDate}" readonly="readonly" autocomplete="given-name"></span>
+						</p>
+						<p class="form-row form-row-first validate-required"
+							id="billing_first_name_field" data-priority="10">
+							<label for="billing_first_name" class="">Address&nbsp;<abbr
+								class="required" title="required">*</abbr></label><span
+								class="woocommerce-input-wrapper"> <br> <input
+								type="text" class="input-text fill_inited"
+								name="billing_first_name" placeholder=""
+								th:field="*{address}" readonly="readonly" autocomplete="given-name"></span>
+						</p>
+						<p class="form-row form-row-first validate-required"
+							id="billing_first_name_field" data-priority="10">
+							<label for="billing_first_name" class="">Status&nbsp;<abbr
+								class="required" title="required">*</abbr></label><span
+								class="woocommerce-input-wrapper"> <br> <input
+								type="text" class="input-text fill_inited"
+								name="billing_first_name" placeholder=""
+								th:field="*{trangthai}" readonly="readonly" autocomplete="given-name"></span>
+						</p>
+
+						<div style="color:#000;" >
+
+							<a type="button" class="btn btn-danger" th:href="@{|/order/changes/${id}|}">Huỷ Đơn </a> |
+							<a type="button" class="btn btn-success" th:href="@{|/order/success/${id}|}">Đã Nhận</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

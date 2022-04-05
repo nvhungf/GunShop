@@ -1,0 +1,97 @@
+<div xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+	<main>
+		<div class="content_wrap">
+			<div class="mfp-content">
+				<div id="trx_addons_login_popup" class="trx_addons_popup">
+					<div
+						class="trx_addons_tabs inited ui-tabs ui-corner-all ui-widget ui-widget-content">
+						<ul
+							class="trx_addons_tabs_titles ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header"
+							role="tablist">
+							<li
+								class="trx_addons_tabs_title trx_addons_tabs_title_login ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active"
+								role="tab" tabindex="0" aria-controls="trx_addons_login_content"
+								aria-labelledby="ui-id-1" aria-selected="true"
+								aria-expanded="true"><a href="#trx_addons_login_content"
+								role="presentation" tabindex="-1" class="ui-tabs-anchor"
+								id="ui-id-1"> <i class="trx_addons_icon-lock-open"></i>
+									Login
+							</a></li>
+						</ul>
+						<div id="trx_addons_login_content"
+							class="trx_addons_tabs_content trx_addons_login_content ui-tabs-panel ui-corner-bottom ui-widget-content"
+							aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false">
+							<div>
+								<div
+									class="trx_addons_popup_form_wrap trx_addons_popup_form_wrap_login">
+									<form
+										class="trx_addons_popup_form trx_addons_popup_form_login sc_input_hover_iconed inited"
+										th:action="@{/security/login}" method="POST"
+										name="trx_addons_login_form">
+										<input type="hidden" id="login_redirect_to" name="redirect_to"
+											value="">
+										<div
+											class="trx_addons_popup_form_field trx_addons_popup_form_field_login">
+											<label
+												class="sc_form_field sc_form_field_log sc_form_field_text required"><span
+												class="sc_form_field_wrap"><input type="text"
+													name="username" value="" aria-required="true"
+													class="fill_inited"><span
+													class="sc_form_field_hover"><i
+														class="sc_form_field_icon trx_addons_icon-user-alt"></i><span
+														class="sc_form_field_content" data-content="Login">Username</span></span></span></label>
+										</div>
+										<div
+											class="trx_addons_popup_form_field trx_addons_popup_form_field_password">
+											<label
+												class="sc_form_field sc_form_field_pwd sc_form_field_password required"><span
+												class="sc_form_field_wrap"><input type="password"
+													name="password" id="pwd_1869154789" value=""
+													aria-required="true" class="fill_inited"><span
+													class="sc_form_field_hover"><i
+														class="sc_form_field_icon trx_addons_icon-lock"></i><span
+														class="sc_form_field_content" data-content="Password">Password</span></span></span></label>
+										</div>
+										<div
+											class="trx_addons_popup_form_field trx_addons_popup_form_field_remember">
+											<a href="/security/forgot/form"
+												class="trx_addons_popup_form_field_forgot_password">Forgot
+												password?</a> <input type="checkbox" value="forever"
+												name="remember-me"><label for="rememberme">
+												Remember me</label>
+										</div>
+										<div
+											class="trx_addons_popup_form_field trx_addons_popup_form_field_submit">
+											<i class="pull-left-text-danger" th:text="${message}"></i><br>
+											<button class="submit_button">Login</button>
+										</div>
+										<br />
+										<div>
+											Sign in with <br /> <a href="/oauth2/authorization/google"><i
+												class="fab fa-google"></i>&nbsp; Google</a> :: <a
+												href="/oauth2/authorization/facebook"><i
+												class="fab fa-facebook-f"></i> &nbsp;Facebook</a>
+										</div>
+										<div class="trx_addons_message_box sc_form_result"></div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a th:href="@{|/home|}" type="button" class="mfp-close">x</a>
+				</div>
+			</div>
+			<div class="sidebar left widget_area" role="complementary">
+				<div class="sidebar_inner">
+					<aside id="woocommerce_product_categories-2"
+						class="widget woocommerce widget_product_categories">
+						<h5 class="widget_title">Categories</h5>
+						<div th:replace="/category/_category.html"></div>
+					</aside>
+
+				</div>
+			</div>
+		</div>
+	</main>
+</div>

@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js scheme_default" xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="profile" href="//gmpg.org/xfn/11">
+	<link rel="pingback" href="http://honor.ancorathemes.com/xmlrpc.php">
+	<title>Home 4 (Store) &#8211; HONOR</title>
+	<style type="text/css" media="screen">
+		#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar tbody td a.ui-state-active,
+		#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar tbody td a.ui-state-active:hover,
+		body #booked-profile-page input[type=submit].button-primary:hover,
+		body .booked-list-view button.button:hover,
+		body .booked-list-view input[type=submit].button-primary:hover,
+		body table.booked-calendar input[type=submit].button-primary:hover,
+		body .booked-modal input[type=submit].button-primary:hover,
+		body table.booked-calendar th,
+		body table.booked-calendar thead,
+		body table.booked-calendar thead th,
+		body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button:hover,
+		body #booked-profile-page .booked-profile-header,
+		body #booked-profile-page .booked-tabs li.active a,
+		body #booked-profile-page .booked-tabs li.active a:hover,
+		body #booked-profile-page .appt-block .google-cal-button>a:hover,
+		#ui-datepicker-div.booked_custom_date_picker .ui-datepicker-header {
+			background: #c4f2d4 !important;
+		}
+
+		body #booked-profile-page input[type=submit].button-primary:hover,
+		body table.booked-calendar input[type=submit].button-primary:hover,
+		body .booked-list-view button.button:hover,
+		body .booked-list-view input[type=submit].button-primary:hover,
+		body .booked-modal input[type=submit].button-primary:hover,
+		body table.booked-calendar th,
+		body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button:hover,
+		body #booked-profile-page .booked-profile-header,
+		body #booked-profile-page .appt-block .google-cal-button>a:hover {
+			border-color: #c4f2d4 !important;
+		}
+
+		body table.booked-calendar tr.days,
+		body table.booked-calendar tr.days th,
+		body .booked-calendarSwitcher.calendar,
+		body #booked-profile-page .booked-tabs,
+		#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar thead,
+		#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar thead th {
+			background: #039146 !important;
+		}
+
+		body table.booked-calendar tr.days th,
+		body #booked-profile-page .booked-tabs {
+			border-color: #039146 !important;
+		}
+
+		#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar tbody td.ui-datepicker-today a,
+		#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar tbody td.ui-datepicker-today a:hover,
+		body #booked-profile-page input[type=submit].button-primary,
+		body table.booked-calendar input[type=submit].button-primary,
+		body .booked-list-view button.button,
+		body .booked-list-view input[type=submit].button-primary,
+		body .booked-list-view button.button,
+		body .booked-list-view input[type=submit].button-primary,
+		body .booked-modal input[type=submit].button-primary,
+		body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button,
+		body #booked-profile-page .booked-profile-appt-list .appt-block.approved .status-block,
+		body #booked-profile-page .appt-block .google-cal-button>a,
+		body .booked-modal p.booked-title-bar,
+		body table.booked-calendar td:hover .date span,
+		body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active,
+		body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active:hover,
+		.booked-ms-modal .booked-book-appt
+
+		/* Multi-Slot Booking */
+			{
+			background: #56c477;
+		}
+
+		body #booked-profile-page input[type=submit].button-primary,
+		body table.booked-calendar input[type=submit].button-primary,
+		body .booked-list-view button.button,
+		body .booked-list-view input[type=submit].button-primary,
+		body .booked-list-view button.button,
+		body .booked-list-view input[type=submit].button-primary,
+		body .booked-modal input[type=submit].button-primary,
+		body #booked-profile-page .appt-block .google-cal-button>a,
+		body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button,
+		body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active,
+		body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active:hover {
+			border-color: #56c477;
+		}
+
+		body .booked-modal .bm-window p i.fa,
+		body .booked-modal .bm-window a,
+		body .booked-appt-list .booked-public-appointment-title,
+		body .booked-modal .bm-window p.appointment-title,
+		.booked-ms-modal.visible:hover .booked-book-appt {
+			color: #56c477;
+		}
+
+		.booked-appt-list .timeslot.has-title .booked-public-appointment-title {
+			color: inherit;
+		}
+	</style>
+	<meta name='robots' content='max-image-preview:large' />
+	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+	<link rel='dns-prefetch' href='//www.google.com' />
+	<link rel='dns-prefetch' href='//fonts.gstatic.com' />
+	<link rel='dns-prefetch' href='//youtube.com' />
+	<link rel='dns-prefetch' href='//maps.gstatic.com' />
+	<link rel='dns-prefetch' href='//maps.google.com' />
+	<link rel='dns-prefetch' href='//khms0.googleapis.com' />
+	<link rel="alternate" type="application/rss+xml" title="HONOR &raquo; Feed"
+		href="http://honor.ancorathemes.com/feed/" />
+	<link rel="alternate" type="application/rss+xml" title="HONOR &raquo; Comments Feed"
+		href="http://honor.ancorathemes.com/comments/feed/" />
+	<link rel="alternate" type="text/calendar" title="HONOR &raquo; iCal Feed"
+		href="http://honor.ancorathemes.com/events/?ical=1" />
+	<link rel="alternate" type="application/rss+xml" title="HONOR &raquo; Home 4 (Store) Comments Feed"
+		href="http://honor.ancorathemes.com/home-4-store/feed/" />
+	<meta property="og:url" content="http://honor.ancorathemes.com/home-4-store/ " />
+	<meta property="og:title" content="Home 4 (Store)" />
+	<meta property="og:description" content="" />
+	<meta property="og:type" content="article" />
+	<style type="text/css">
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 .07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+	<link property="stylesheet" rel='stylesheet' id='wp-block-library-css'
+		href='http://honor.ancorathemes.com/wp-includes/css/dist/block-library/style.min.css?ver=5.7.1' type='text/css'
+		media='all' />
+	<link property="stylesheet" rel='stylesheet' id='wc-block-vendors-style-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-style.css?ver=5.3.2'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='wc-block-style-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/style.css?ver=5.3.2'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='booked-icons-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/booked/assets/css/icons.css?ver=2.3.5' type='text/css'
+		media='all' />
+	<link property="stylesheet" rel='stylesheet' id='booked-tooltipster-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/booked/assets/js/tooltipster/css/tooltipster.css?ver=3.3.0'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='booked-tooltipster-theme-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/booked/assets/js/tooltipster/css/themes/tooltipster-light.css?ver=3.3.0'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='booked-animations-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/booked/assets/css/animations.css?ver=2.3.5'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='booked-css-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/booked/dist/booked.css?ver=2.3.5' type='text/css'
+		media='all' />
+	<link property="stylesheet" rel='stylesheet' id='contact-form-7-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.4.2'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='essential-grid-plugin-settings-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/essential-grid/public/assets/css/settings.css?ver=3.0.11'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='tp-fontello-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/essential-grid/public/assets/font/fontello/css/fontello.css?ver=3.0.11'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='rs-plugin-settings-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.4.11'
+		type='text/css' media='all' />
+	<style id='rs-plugin-settings-inline-css' type='text/css'>
+		#rs-demo-id {}
+	</style>
+	<link property="stylesheet" rel='stylesheet' id='trx_addons-icons-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/trx_addons/css/font-icons/css/trx_addons_icons-embedded.css'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='swiperslider-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/trx_addons/js/swiper/swiper.min.css' type='text/css'
+		media='all' />
+	<link property="stylesheet" rel='stylesheet' id='magnific-popup-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/trx_addons/js/magnific/magnific-popup.min.css'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='trx_addons-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/trx_addons/css/trx_addons.css' type='text/css'
+		media='all' />
+	<link property="stylesheet" rel='stylesheet' id='trx_addons-animation-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/trx_addons/css/trx_addons.animation.css' type='text/css'
+		media='all' />
+	<link property="stylesheet" rel='stylesheet' id='trx_socials-icons-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/trx_socials/assets/css/font_icons/css/trx_socials_icons.css'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='trx_socials-widget_instagram-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/trx_socials/widgets/instagram/instagram.css'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='woocommerce-layout-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=5.5.1'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='woocommerce-smallscreen-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=5.5.1'
+		type='text/css' media='only screen and (max-width: 768px)' />
+	<link property="stylesheet" rel='stylesheet' id='woocommerce-general-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=5.5.1'
+		type='text/css' media='all' />
+	<style id='woocommerce-inline-inline-css' type='text/css'>
+		.woocommerce form .form-row .required {
+			visibility: visible;
+		}
+	</style>
+	<link property="stylesheet" rel='stylesheet' id='elementor-icons-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.12.0'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='elementor-frontend-legacy-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/css/frontend-legacy.min.css?ver=3.3.1'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='elementor-frontend-css'
+		href='http://honor.ancorathemes.com/wp-content/uploads/elementor/css/custom-frontend.min.css?ver=1626832852'
+		type='text/css' media='all' />
+	<style id='elementor-frontend-inline-css' type='text/css'>
+		@font-face {
+			font-family: eicons;
+			src: url(http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5.10.0);
+			src: url(http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5.10.0#iefix) format("embedded-opentype"), url(http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff2?5.10.0) format("woff2"), url(http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff?5.10.0) format("woff"), url(http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.ttf?5.10.0) format("truetype"), url(http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.svg?5.10.0#eicon) format("svg");
+			font-weight: 400;
+			font-style: normal
+		}
+
+		.elementor-kit-2319 {
+			--e-global-color-primary: #6EC1E4;
+			--e-global-color-secondary: #54595F;
+			--e-global-color-text: #7A7A7A;
+			--e-global-color-accent: #61CE70;
+			--e-global-typography-primary-font-family: "Roboto";
+			--e-global-typography-primary-font-weight: 600;
+			--e-global-typography-secondary-font-family: "Roboto Slab";
+			--e-global-typography-secondary-font-weight: 400;
+			--e-global-typography-text-font-family: "Roboto";
+			--e-global-typography-text-font-weight: 400;
+			--e-global-typography-accent-font-family: "Roboto";
+			--e-global-typography-accent-font-weight: 500;
+		}
+
+		.elementor-section.elementor-section-boxed>.elementor-container {
+			max-width: 1200px;
+		}
+
+		.elementor-widget:not(:last-child) {
+			margin-bottom: 0px;
+		}
+
+			
+
+		h1.entry-title {
+			display: var(--page-title-display);
+		}
+
+		@media(max-width:1023px) {
+			.elementor-section.elementor-section-boxed>.elementor-container {
+				max-width: 1024px;
+			}
+		}
+
+		@media(max-width:767px) {
+			.elementor-section.elementor-section-boxed>.elementor-container {
+				max-width: 767px;
+			}
+		}
+	</style>
+	<link property="stylesheet" rel='stylesheet' id='google-fonts-1-css'
+		href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.7.1'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='booked-wc-fe-styles-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/booked/includes/add-ons/woocommerce-payments//css/frontend-style.css?ver=5.7.1'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='js_composer_front-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=6.6.0'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='honor-font-Titillium-Web-css'
+		href='http://honor.ancorathemes.com/wp-content/themes/honor/css/font-face/Titillium-Web/stylesheet.css'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='honor-font-google_fonts-css'
+		href="https://fonts.googleapis.com/css?family=Oswald:400,400italic,500,500italic,700,700italic&#038;subset=latin,latin-ext"
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='fontello-icons-css'
+		href='http://honor.ancorathemes.com/wp-content/themes/honor/css/font-icons/css/fontello-embedded.css'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='honor-main-css'
+		href='http://honor.ancorathemes.com/wp-content/themes/honor/style.css' type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='honor-colors-css'
+		href='http://honor.ancorathemes.com/wp-content/themes/honor/css/__colors.css' type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='mediaelement-css'
+		href='http://honor.ancorathemes.com/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.16'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='wp-mediaelement-css'
+		href='http://honor.ancorathemes.com/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=5.7.1'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='trx_addons-responsive-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/trx_addons/css/trx_addons.responsive.css' type='text/css'
+		media='all' />
+	<link property="stylesheet" rel='stylesheet' id='honor-responsive-css'
+		href='http://honor.ancorathemes.com/wp-content/themes/honor/css/responsive.css' type='text/css' media='all' />
+	<script type='text/javascript' src='http://honor.ancorathemes.com/wp-includes/js/jquery/jquery.min.js?ver=3.5.1'
+		id='jquery-core-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2'
+		id='jquery-migrate-js'></script>
+	<link rel="https://api.w.org/" href="http://honor.ancorathemes.com/wp-json/" />
+	<link rel="alternate" type="application/json" href="http://honor.ancorathemes.com/wp-json/wp/v2/pages/2" />
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://honor.ancorathemes.com/xmlrpc.php?rsd" />
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml"
+		href="http://honor.ancorathemes.com/wp-includes/wlwmanifest.xml" />
+	<meta name="generator" content="WordPress 5.7.1" />
+	<meta name="generator" content="WooCommerce 5.5.1" />
+	<link rel="canonical" href="http://honor.ancorathemes.com/home-4-store/" />
+	<link rel='shortlink' href='http://honor.ancorathemes.com/?p=2' />
+	<link rel="alternate" type="application/json+oembed"
+		href="http://honor.ancorathemes.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhonor.ancorathemes.com%2Fhome-4-store%2F" />
+	<link rel="alternate" type="text/xml+oembed"
+		href="http://honor.ancorathemes.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fhonor.ancorathemes.com%2Fhome-4-store%2F&#038;format=xml" />
+	<meta name="tec-api-version" content="v1">
+	<meta name="tec-api-origin" content="http://honor.ancorathemes.com">
+	<link rel="https://theeventscalendar.com/" href="http://honor.ancorathemes.com/wp-json/tribe/events/v1/" />
+	<link rel="preload" as="font"
+		href="http://honor.ancorathemes.com/wp-content/themes/honor/css/font-face/Titillium-Web/titilliumweb-light-webfont.woff2"
+		crossorigin>
+	<link rel="preload" as="font"
+		href="http://honor.ancorathemes.com/wp-content/themes/honor/css/font-face/Titillium-Web/titilliumweb-semibold-webfont.woff2"
+		crossorigin>
+	<link rel="preload" as="font"
+		href="http://honor.ancorathemes.com/wp-content/themes/honor/css/font-face/Titillium-Web/titilliumweb-regular-webfont.woff2"
+		crossorigin> <noscript>
+		<style>
+			.woocommerce-product-gallery {
+				opacity: 1 !important;
+			}
+		</style>
+	</noscript>
+	<style type="text/css">
+		.recentcomments a {
+			display: inline !important;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+	</style>
+	<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." />
+	<meta name="generator"
+		content="Powered by Slider Revolution 6.4.11 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+	<link rel="icon" href="http://honor.ancorathemes.com/wp-content/uploads/2021/05/cropped-favicon-32x32.png"
+		sizes="32x32" />
+	<link rel="icon" href="http://honor.ancorathemes.com/wp-content/uploads/2021/05/cropped-favicon-192x192.png"
+		sizes="192x192" />
+	<link rel="apple-touch-icon"
+		href="http://honor.ancorathemes.com/wp-content/uploads/2021/05/cropped-favicon-180x180.png" />
+	<meta name="msapplication-TileImage"
+		content="http://honor.ancorathemes.com/wp-content/uploads/2021/05/cropped-favicon-270x270.png" />
+	<script type="text/javascript">function setREVStartSize(e) {
+			//window.requestAnimationFrame(function() {				 
+			window.RSIW = window.RSIW === undefined ? window.innerWidth : window.RSIW;
+			window.RSIH = window.RSIH === undefined ? window.innerHeight : window.RSIH;
+			try {
+				var pw = document.getElementById(e.c).parentNode.offsetWidth,
+					newh;
+				pw = pw === 0 || isNaN(pw) ? window.RSIW : pw;
+				e.tabw = e.tabw === undefined ? 0 : parseInt(e.tabw);
+				e.thumbw = e.thumbw === undefined ? 0 : parseInt(e.thumbw);
+				e.tabh = e.tabh === undefined ? 0 : parseInt(e.tabh);
+				e.thumbh = e.thumbh === undefined ? 0 : parseInt(e.thumbh);
+				e.tabhide = e.tabhide === undefined ? 0 : parseInt(e.tabhide);
+				e.thumbhide = e.thumbhide === undefined ? 0 : parseInt(e.thumbhide);
+				e.mh = e.mh === undefined || e.mh == "" || e.mh === "auto" ? 0 : parseInt(e.mh, 0);
+				if (e.layout === "fullscreen" || e.l === "fullscreen")
+					newh = Math.max(e.mh, window.RSIH);
+				else {
+					e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+					for (var i in e.rl) if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
+					e.gh = e.el === undefined || e.el === "" || (Array.isArray(e.el) && e.el.length == 0) ? e.gh : e.el;
+					e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+					for (var i in e.rl) if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
+
+					var nl = new Array(e.rl.length),
+						ix = 0,
+						sl;
+					e.tabw = e.tabhide >= pw ? 0 : e.tabw;
+					e.thumbw = e.thumbhide >= pw ? 0 : e.thumbw;
+					e.tabh = e.tabhide >= pw ? 0 : e.tabh;
+					e.thumbh = e.thumbhide >= pw ? 0 : e.thumbh;
+					for (var i in e.rl) nl[i] = e.rl[i] < window.RSIW ? 0 : e.rl[i];
+					sl = nl[0];
+					for (var i in nl) if (sl > nl[i] && nl[i] > 0) { sl = nl[i]; ix = i; }
+					var m = pw > (e.gw[ix] + e.tabw + e.thumbw) ? 1 : (pw - (e.tabw + e.thumbw)) / (e.gw[ix]);
+					newh = (e.gh[ix] * m) + (e.tabh + e.thumbh);
+				}
+				if (window.rs_init_css === undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));
+				document.getElementById(e.c).height = newh + "px";
+				window.rs_init_css.innerHTML += "#" + e.c + "_wrapper { height: " + newh + "px }";
+			} catch (e) {
+				console.log("Failure at Presize of Slider:" + e)
+			}
+			//});
+		};</script>
+	<style type="text/css" data-type="vc_shortcodes-custom-css">
+		.vc_custom_1520236745281 {
+			background-color: #1f1f1d !important;
+		}
+
+		.vc_custom_1520240544946 {
+			background-color: #1f1f1d !important;
+		}
+
+		.vc_custom_1521463357562 {
+			background: #10100f url(http://honor.ancorathemes.com/wp-content/uploads/2017/12/bg-17-copyright.jpg?id=729) !important;
+			background-position: center !important;
+			background-repeat: no-repeat !important;
+			background-size: cover !important;
+		}
+
+		.vc_custom_1520260175214 {
+			background-image: url(http://honor.ancorathemes.com/wp-content/uploads/2017/12/bg-20-copyright.jpg?id=734) !important;
+			background-position: center !important;
+			background-repeat: no-repeat !important;
+			background-size: cover !important;
+		}
+
+		.vc_custom_1511970521553 {
+			background-image: url(http://honor.ancorathemes.com/wp-content/uploads/2017/11/bg-7.jpg?id=459) !important;
+			background-position: center !important;
+			background-repeat: no-repeat !important;
+			background-size: cover !important;
+		}
+
+		.vc_custom_1521463079128 {
+			margin-top: -0.2rem !important;
+		}
+
+		.vc_custom_1520240109779 {
+			margin-top: -0.55rem !important;
+		}
+
+		.vc_custom_1520240109779 {
+			margin-top: -0.55rem !important;
+		}
+
+		.vc_custom_1520240109779 {
+			margin-top: -0.55rem !important;
+		}
+
+		.vc_custom_1520240109779 {
+			margin-top: -0.55rem !important;
+		}
+
+		.vc_custom_1520240109779 {
+			margin-top: -0.55rem !important;
+		}
+
+		.vc_custom_1520240109779 {
+			margin-top: -0.55rem !important;
+		}
+
+		.vc_custom_1520240109779 {
+			margin-top: -0.55rem !important;
+		}
+
+		.vc_custom_1520240109779 {
+			margin-top: -0.55rem !important;
+		}
+
+		.vc_custom_1574161666475 {
+			background-size: cover !important;
+		}
+
+		.vc_custom_1612265182403 {
+			background-size: cover !important;
+		}
+
+		.vc_custom_1520243250702 {
+			margin-top: 0.5rem !important;
+		}
+
+		.vc_custom_1520243347600 {
+			margin-top: -0.3rem !important;
+		}
+
+		.vc_custom_1520244195563 {
+			margin-top: -0.2rem !important;
+		}
+
+		.vc_custom_1520244843852 {
+			margin-top: -1.45rem !important;
+		}
+
+		.vc_custom_1520245255200 {
+			margin-top: 0.35rem !important;
+		}
+
+		.vc_custom_1520245672282 {
+			margin-top: -0.6rem !important;
+		}
+
+		.vc_custom_1520245694967 {
+			margin-top: 0.5rem !important;
+		}
+
+		.vc_custom_1520246681850 {
+			margin-bottom: -0.3rem !important;
+		}
+
+		.vc_custom_1520259603995 {
+			padding-top: 2rem !important;
+			padding-bottom: 2.4rem !important;
+			padding-left: 2.2rem !important;
+			background-image: url(http://honor.ancorathemes.com/wp-content/uploads/2018/03/banner_5_bg.jpg?id=1188) !important;
+			background-position: center left !important;
+			background-repeat: no-repeat !important;
+			background-size: cover !important;
+			border-radius: 3px !important;
+		}
+
+		.vc_custom_1522825032785 {
+			border-top-width: 1px !important;
+			border-right-width: 1px !important;
+			border-bottom-width: 1px !important;
+			border-left-width: 1px !important;
+			background-image: url(http://honor.ancorathemes.com/wp-content/uploads/2018/04/banner_7_bg.jpg?id=1388) !important;
+			background-position: center right !important;
+			background-repeat: no-repeat !important;
+			background-size: contain !important;
+			border-left-color: #dbdbdb !important;
+			border-left-style: solid !important;
+			border-right-color: #dbdbdb !important;
+			border-right-style: solid !important;
+			border-top-color: #dbdbdb !important;
+			border-top-style: solid !important;
+			border-bottom-color: #dbdbdb !important;
+			border-bottom-style: solid !important;
+			border-radius: 3px !important;
+		}
+
+		.vc_custom_1520259586128 {
+			margin-top: 3.3rem !important;
+		}
+
+		.vc_custom_1522825344321 {
+			padding-top: 1.8rem !important;
+			padding-bottom: 1.8rem !important;
+			padding-left: 2rem !important;
+		}
+
+		.vc_custom_1520258240641 {
+			border-top-width: 1px !important;
+			border-right-width: 1px !important;
+			border-bottom-width: 1px !important;
+			border-left-width: 1px !important;
+			border-left-color: #dbdbdb !important;
+			border-left-style: solid !important;
+			border-right-color: #dbdbdb !important;
+			border-right-style: solid !important;
+			border-top-color: #dbdbdb !important;
+			border-top-style: solid !important;
+			border-bottom-color: #dbdbdb !important;
+			border-bottom-style: solid !important;
+			border-radius: 3px !important;
+		}
+
+		.vc_custom_1520258253034 {
+			margin-top: 0.8rem !important;
+		}
+
+		.vc_custom_1520258306930 {
+			margin-top: -0.4rem !important;
+		}
+
+		.vc_custom_1520259764699 {
+			margin-top: 0.45rem !important;
+		}
+
+		.vc_custom_1520260191812 {
+			margin-top: 0.1rem !important;
+		}
+
+		.vc_custom_1520262849689 {
+			margin-top: 0.5rem !important;
+		}
+
+		.vc_custom_1520263464556 {
+			margin-top: 0.9rem !important;
+		}
+
+		.vc_custom_1520263473605 {
+			margin-top: 0.6rem !important;
+		}
+
+		.vc_custom_1520265565212 {
+			margin-top: -0.3rem !important;
+		}
+
+		.vc_custom_1520265601060 {
+			margin-bottom: -0.25rem !important;
+		}
+
+		.vc_custom_1520268351865 {
+			margin-top: 0.45rem !important;
+		}
+	</style><noscript>
+		<style>
+			.wpb_animate_when_almost_visible {
+				opacity: 1;
+			}
+		</style>
+	</noscript>
+	<style type="text/css" id="trx_addons-inline-styles-inline-css">
+		.vc_custom_1593164580341 {
+			padding-top: 0px !important;
+			padding-bottom: 0px !important;
+		}
+
+		.vc_custom_1593075732566 {
+			padding-top: 0.5em !important;
+			padding-bottom: 0.6em !important;
+		}
+
+		.vc_custom_1599743957628 {
+			margin-bottom: 26px !important;
+		}
+
+		.vc_custom_1599744000539 {
+			margin-bottom: 26px !important;
+		}
+
+		.vc_custom_1599744029431 {
+			margin-bottom: 26px !important;
+		}
+
+		.vc_custom_1512402230082 {
+			background-color: #1f1f1d !important;
+		}
+
+		.vc_custom_1512402706127 {
+			background-color: #10100f !important;
+		}
+
+		.vc_custom_1512402706127 {
+			background-color: #10100f !important;
+		}
+	</style>
+	<style>
+		' + htmlDivCss + '
+	</style>
+	<style>
+		' + htmlDivCss + '
+	</style>
+</head>
+
+<body>
+    <div data-vc-full-width="true" data-vc-full-width-init="false"
+									data-vc-stretch-content="true"
+									class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
+									<div
+										class="wpb_column vc_column_container vc_col-sm-12 sc_layouts_column_icons_position_left">
+										<div class="vc_column-inner">
+											<div class="wpb_wrapper">
+												<div class="wpb_revslider_element wpb_content_element">
+													<p class="rs-p-wp-fix"></p>
+													<rs-module-wrap id="rev_slider_3_1_wrapper" data-source="gallery"
+														style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;max-width:;">
+														<rs-module id="rev_slider_3_1" style="" data-version="6.4.11">
+															<rs-slides>
+																<rs-slide data-key="rs-7" data-title="Slide"
+																	data-thumb="//honor.ancorathemes.com/wp-content/uploads/revslider/home-2/slide_2_11-100x50.jpg"
+																	data-anim="ms:600;" data-in="o:0;"
+																	data-out="a:false;">
+																	<img src="//honor.ancorathemes.com/wp-content/uploads/revslider/home-2/slide_2_11.jpg"
+																		title="slide_2_11.jpg" width="1920" height="737"
+																		class="rev-slidebg tp-rs-img"
+																		data-panzoom="d:10000;ss:100;se:110;os:-100/-100;oe:100/100;"
+																		data-no-retina>
+																	<rs-layer id="slider-3-slide-7-layer-1"
+																		class="home-title" data-type="text"
+																		data-color="#ffffff" data-rsp_ch="on"
+																		data-xy="x:702px;y:c;yo:-183px;"
+																		data-text="s:63;l:73;fw:500;a:inherit;"
+																		data-wrpcls="home-title-wrap"
+																		data-frame_0="x:50px;tp:600;"
+																		data-frame_1="tp:600;st:800;sp:500;sR:800;"
+																		data-frame_999="o:0;tp:600;st:w;sR:7700;"
+																		style="z-index:5;font-family:Oswald;">BROWSE
+																		CURRENT<br> INVENTORY
+																	</rs-layer>
+																	<rs-layer id="slider-3-slide-7-layer-2"
+																		class="home-subtitle" data-type="text"
+																		data-color="#ffffff" data-rsp_ch="on"
+																		data-xy="x:702px;y:c;yo:-58px;"
+																		data-text="s:21;l:30;fw:300;a:inherit;"
+																		data-wrpcls="home-subtitle-wrap"
+																		data-frame_0="x:50px;tp:600;"
+																		data-frame_1="tp:600;st:1300;sp:500;sR:1300;"
+																		data-frame_999="o:0;tp:600;st:w;sR:7200;"
+																		style="z-index:6;font-family:Titillium Web;">
+																		Come in and be the first to shop our<br> newest
+																		additions!
+																	</rs-layer><a id="slider-3-slide-7-layer-3"
+																		class="rs-layer home-btn rev-btn" href="/shop/"
+																		target="_self" data-type="button"
+																		data-color="rgba(255,255,255,1)"
+																		data-xy="x:702px;y:c;yo:30px;"
+																		data-text="s:14;l:25;ls:1px;fw:600;a:inherit;"
+																		data-wrpcls="home-btn-wrap" data-rsp_bd="off"
+																		data-padding="t:12;r:45;b:15;l:45;"
+																		data-border="bor:3px,3px,3px,3px;"
+																		data-frame_0="x:50px;tp:600;"
+																		data-frame_1="tp:600;st:1800;sp:500;sR:1800;"
+																		data-frame_999="o:0;tp:600;st:w;sR:6700;"
+																		data-frame_hover="c:#242423;bgc:#fff;boc:#000;bor:3px,3px,3px,3px;bos:solid;oX:50;oY:50;"
+																		style="z-index:7;background-color:#ff6000;font-family:Titillium Web;text-transform:uppercase;cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">Learn
+																		More
+																	</a>
+																	<rs-layer id="slider-3-slide-7-layer-4"
+																		class="home-img" data-type="image"
+																		data-rsp_ch="on" data-xy="y:c;yo:-75px;"
+																		data-text="l:22;a:inherit;"
+																		data-dim="w:586px;h:443px;"
+																		data-wrpcls="home-img-wrap"
+																		data-frame_0="x:-50px;tp:600;"
+																		data-frame_1="tp:600;st:300;sp:500;sR:300;"
+																		data-frame_999="o:0;tp:600;st:w;sR:8200;"
+																		style="z-index:8;"><img
+																			src="//honor.ancorathemes.com/wp-content/uploads/revslider/home-2/shop11.png"
+																			class="tp-rs-img" width="666" height="479"
+																			data-no-retina>
+																	</rs-layer>
+																</rs-slide>
+																<rs-slide data-key="rs-8" data-title="Slide"
+																	data-thumb="//honor.ancorathemes.com/wp-content/uploads/revslider/home-2/slide_2_11-100x50.jpg"
+																	data-anim="ms:600;" data-in="o:0;"
+																	data-out="a:false;">
+																	<img src="//honor.ancorathemes.com/wp-content/uploads/revslider/home-2/slide_2_11.jpg"
+																		title="slide_2_11.jpg" width="1920" height="737"
+																		class="rev-slidebg tp-rs-img"
+																		data-panzoom="d:10000;ss:100;se:110;os:-100/-100;oe:100/100;"
+																		data-no-retina>
+																	<rs-layer id="slider-3-slide-8-layer-1"
+																		class="home-title" data-type="text"
+																		data-color="#ffffff" data-rsp_ch="on"
+																		data-xy="x:702px;y:c;yo:-183px;"
+																		data-text="s:63;l:73;fw:500;a:inherit;"
+																		data-wrpcls="home-title-wrap"
+																		data-frame_0="x:50px;tp:600;"
+																		data-frame_1="tp:600;st:800;sp:500;sR:800;"
+																		data-frame_999="o:0;tp:600;st:w;sR:7700;"
+																		style="z-index:5;font-family:Oswald;">BROWSE
+																		CURRENT<br> INVENTORY
+																	</rs-layer>
+																	<rs-layer id="slider-3-slide-8-layer-2"
+																		class="home-subtitle" data-type="text"
+																		data-color="#ffffff" data-rsp_ch="on"
+																		data-xy="x:702px;y:c;yo:-58px;"
+																		data-text="s:21;l:30;fw:300;a:inherit;"
+																		data-wrpcls="home-subtitle-wrap"
+																		data-frame_0="x:50px;tp:600;"
+																		data-frame_1="tp:600;st:1300;sp:500;sR:1300;"
+																		data-frame_999="o:0;tp:600;st:w;sR:7200;"
+																		style="z-index:6;font-family:Titillium Web;">
+																		Come in and be the first to shop our<br> newest
+																		additions!
+																	</rs-layer><a id="slider-3-slide-8-layer-3"
+																		class="rs-layer home-btn rev-btn" href="/shop/"
+																		target="_self" data-type="button"
+																		data-color="rgba(255,255,255,1)"
+																		data-xy="x:702px;y:c;yo:30px;"
+																		data-text="s:14;l:25;ls:1px;fw:600;a:inherit;"
+																		data-wrpcls="home-btn-wrap" data-rsp_bd="off"
+																		data-padding="t:12;r:45;b:15;l:45;"
+																		data-border="bor:3px,3px,3px,3px;"
+																		data-frame_0="x:50px;tp:600;"
+																		data-frame_1="tp:600;st:1800;sp:500;sR:1800;"
+																		data-frame_999="o:0;tp:600;st:w;sR:6700;"
+																		data-frame_hover="c:#242423;bgc:#fff;boc:#000;bor:3px,3px,3px,3px;bos:solid;oX:50;oY:50;"
+																		style="z-index:7;background-color:#ff6000;font-family:Titillium Web;text-transform:uppercase;cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">Learn
+																		More
+																	</a>
+																	<rs-layer id="slider-3-slide-8-layer-4"
+																		class="home-img" data-type="image"
+																		data-rsp_ch="on" data-xy="y:c;yo:-75px;"
+																		data-text="l:22;a:inherit;"
+																		data-dim="w:586px;h:443px;"
+																		data-wrpcls="home-img-wrap"
+																		data-frame_0="x:-50px;tp:600;"
+																		data-frame_1="tp:600;st:300;sp:500;sR:300;"
+																		data-frame_999="o:0;tp:600;st:w;sR:8200;"
+																		style="z-index:8;"><img
+																			src="//honor.ancorathemes.com/wp-content/uploads/revslider/home-2/shop21.png"
+																			class="tp-rs-img" width="666" height="479"
+																			data-no-retina>
+																	</rs-layer>
+																</rs-slide>
+																<rs-slide data-key="rs-9" data-title="Slide"
+																	data-thumb="//honor.ancorathemes.com/wp-content/uploads/revslider/home-2/slide_2_11-100x50.jpg"
+																	data-anim="ms:600;" data-in="o:0;"
+																	data-out="a:false;">
+																	<img src="//honor.ancorathemes.com/wp-content/uploads/revslider/home-2/slide_2_11.jpg"
+																		title="slide_2_11.jpg" width="1920" height="737"
+																		class="rev-slidebg tp-rs-img"
+																		data-panzoom="d:10000;ss:100;se:110;os:-100/-100;oe:100/100;"
+																		data-no-retina>
+																	<rs-layer id="slider-3-slide-9-layer-1"
+																		class="home-title" data-type="text"
+																		data-color="#ffffff" data-rsp_ch="on"
+																		data-xy="x:702px;y:c;yo:-183px;"
+																		data-text="s:63;l:73;fw:500;a:inherit;"
+																		data-wrpcls="home-title-wrap"
+																		data-frame_0="x:50px;tp:600;"
+																		data-frame_1="tp:600;st:800;sp:500;sR:800;"
+																		data-frame_999="o:0;tp:600;st:w;sR:7700;"
+																		style="z-index:5;font-family:Oswald;">BROWSE
+																		CURRENT<br> INVENTORY
+																	</rs-layer>
+																	<rs-layer id="slider-3-slide-9-layer-2"
+																		class="home-subtitle" data-type="text"
+																		data-color="#ffffff" data-rsp_ch="on"
+																		data-xy="x:702px;y:c;yo:-58px;"
+																		data-text="s:21;l:30;fw:300;a:inherit;"
+																		data-wrpcls="home-subtitle-wrap"
+																		data-frame_0="x:50px;tp:600;"
+																		data-frame_1="tp:600;st:1300;sp:500;sR:1300;"
+																		data-frame_999="o:0;tp:600;st:w;sR:7200;"
+																		style="z-index:6;font-family:Titillium Web;">
+																		Come in and be the first to shop our<br> newest
+																		additions!
+																	</rs-layer><a id="slider-3-slide-9-layer-3"
+																		class="rs-layer home-btn rev-btn" href="/shop/"
+																		target="_self" data-type="button"
+																		data-color="rgba(255,255,255,1)"
+																		data-xy="x:702px;y:c;yo:30px;"
+																		data-text="s:14;l:25;ls:1px;fw:600;a:inherit;"
+																		data-wrpcls="home-btn-wrap" data-rsp_bd="off"
+																		data-padding="t:12;r:45;b:15;l:45;"
+																		data-border="bor:3px,3px,3px,3px;"
+																		data-frame_0="x:50px;tp:600;"
+																		data-frame_1="tp:600;st:1800;sp:500;sR:1800;"
+																		data-frame_999="o:0;tp:600;st:w;sR:6700;"
+																		data-frame_hover="c:#242423;bgc:#fff;boc:#000;bor:3px,3px,3px,3px;bos:solid;oX:50;oY:50;"
+																		style="z-index:7;background-color:#ff6000;font-family:Titillium Web;text-transform:uppercase;cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">Learn
+																		More
+																	</a>
+																	<rs-layer id="slider-3-slide-9-layer-4"
+																		class="home-img" data-type="image"
+																		data-rsp_ch="on" data-xy="y:c;yo:-75px;"
+																		data-text="l:22;a:inherit;"
+																		data-dim="w:586px;h:443px;"
+																		data-wrpcls="home-img-wrap"
+																		data-frame_0="x:-50px;tp:600;"
+																		data-frame_1="tp:600;st:300;sp:500;sR:300;"
+																		data-frame_999="o:0;tp:600;st:w;sR:8200;"
+																		style="z-index:8;"><img
+																			src="//honor.ancorathemes.com/wp-content/uploads/revslider/home-2/shop31.png"
+																			class="tp-rs-img" width="666" height="479"
+																			data-no-retina>
+																	</rs-layer>
+																</rs-slide>
+															</rs-slides>
+														</rs-module>
+														<script data-cfasync="false"
+															src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+														<script type="text/javascript">
+															setREVStartSize({ c: 'rev_slider_3_1', rl: [1240, 1024, 778, 480], el: [], gw: [1240], gh: [737], type: 'standard', justify: '', layout: 'fullwidth', mh: "0" });
+															var revapi3,
+																tpj;
+															function revinit_revslider31() {
+																jQuery(function () {
+																	tpj = jQuery;
+																	revapi3 = tpj("#rev_slider_3_1");
+																	if (revapi3 == undefined || revapi3.revolution == undefined) {
+																		revslider_showDoubleJqueryError("rev_slider_3_1");
+																	} else {
+																		revapi3.revolution({
+																			visibilityLevels: "1240,1024,778,480",
+																			gridwidth: 1240,
+																			gridheight: 737,
+																			spinner: "spinner0",
+																			perspectiveType: "local",
+																			responsiveLevels: "1240,1024,778,480",
+																			progressBar: { disableProgressBar: true },
+																			navigation: {
+																				mouseScrollNavigation: false,
+																				onHoverStop: false,
+																				touch: {
+																					touchenabled: true
+																				},
+																				bullets: {
+																					enable: true,
+																					tmp: "",
+																					style: "custom",
+																					v_offset: 220,
+																					space: 14
+																				}
+																			},
+																			fallbacks: {
+																				allowHTML5AutoPlayOnAndroid: true
+																			},
+																		});
+																	}
+
+																});
+															} // End of RevInitScript
+															var once_revslider31 = false;
+															if (document.readyState === "loading") { document.addEventListener('readystatechange', function () { if ((document.readyState === "interactive" || document.readyState === "complete") && !once_revslider31) { once_revslider31 = true; revinit_revslider31(); } }); } else { once_revslider31 = true; revinit_revslider31(); }
+														</script>
+														<script>
+															var htmlDivCss = unescape(".custom.tp-bullets%20%7B%0A%7D%0A.custom.tp-bullets%3Abefore%20%7B%0A%09content%3A%27%20%27%3B%0A%09position%3Aabsolute%3B%0A%09width%3A100%25%3B%0A%09height%3A100%25%3B%0A%09background%3Atransparent%3B%0A%09padding%3A10px%3B%0A%09margin-left%3A-10px%3Bmargin-top%3A-10px%3B%0A%09box-sizing%3Acontent-box%3B%0A%7D%0A.custom%20.tp-bullet%20%7B%0A%09width%3A12px%3B%0A%09height%3A12px%3B%0A%09position%3Aabsolute%3B%0A%09background%3A%23aaa%3B%0A%20%20%20%20background%3Argba%28125%2C125%2C125%2C0.5%29%3B%0A%09cursor%3A%20pointer%3B%0A%09box-sizing%3Acontent-box%3B%0A%7D%0A.custom%20.tp-bullet.rs-touchhover%2C%0A.custom%20.tp-bullet.selected%20%7B%0A%09background%3Argb%28125%2C125%2C125%29%3B%0A%7D%0A.custom%20.tp-bullet-image%20%7B%0A%7D%0A.custom%20.tp-bullet-title%20%7B%0A%7D%0A%0A");
+															var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+															if (htmlDiv) {
+																htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+															} else {
+																var htmlDiv = document.createElement('div');
+																htmlDiv.innerHTML = '';
+																document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+															}
+														</script>
+														<script>
+															var htmlDivCss = unescape("%0A%0A%0A");
+															var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+															if (htmlDiv) {
+																htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+															} else {
+																var htmlDiv = document.createElement('div');
+																htmlDiv.innerHTML = '';
+																document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+															}
+														</script>
+													</rs-module-wrap>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+    <div th:replace="/layout/_category.html"></div>    
+
+    <script>
+		(function (body) {
+			'use strict';
+			body.className = body.className.replace(/\btribe-no-js\b/, 'tribe-js');
+		})(document.body);
+	</script>
+	<script>(function () {
+			function maybePrefixUrlField() {
+				if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+					this.value = "http://" + this.value;
+				}
+			}
+
+			var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+			if (urlFields) {
+				for (var j = 0; j < urlFields.length; j++) {
+					urlFields[j].addEventListener('blur', maybePrefixUrlField);
+				}
+			}
+		})();</script>
+	<script> /* <![CDATA[ */var tribe_l10n_datatables = { "aria": { "sort_ascending": ": activate to sort column ascending", "sort_descending": ": activate to sort column descending" }, "length_menu": "Show _MENU_ entries", "empty_table": "No data available in table", "info": "Showing _START_ to _END_ of _TOTAL_ entries", "info_empty": "Showing 0 to 0 of 0 entries", "info_filtered": "(filtered from _MAX_ total entries)", "zero_records": "No matching records found", "search": "Search:", "all_selected_text": "All items on this page were selected. ", "select_all_link": "Select all pages", "clear_selection": "Clear Selection.", "pagination": { "all": "All", "next": "Next", "previous": "Previous" }, "select": { "rows": { "0": "", "_": ": Selected %d rows", "1": ": Selected 1 row" } }, "datepicker": { "dayNames": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "dayNamesShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "dayNamesMin": ["S", "M", "T", "W", "T", "F", "S"], "monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "monthNamesShort": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "monthNamesMin": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], "nextText": "Next", "prevText": "Prev", "currentText": "Today", "closeText": "Done", "today": "Today", "clear": "Clear" } };/* ]]> */</script>
+	<link href="https://fonts.googleapis.com/css?family=Oswald:500%7CTitillium+Web:300%2C600" rel="stylesheet"
+		property="stylesheet" media="all" type="text/css">
+	<script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<script type="text/javascript">
+		if (typeof revslider_showDoubleJqueryError === "undefined") {
+			function revslider_showDoubleJqueryError(sliderID) {
+				var err = "<div class='rs_error_message_box'>";
+				err += "<div class='rs_error_message_oops'>Oops...</div>";
+				err += "<div class='rs_error_message_content'>";
+				err += "You have some jquery.js library include that comes after the Slider Revolution files js inclusion.<br>";
+				err += "To fix this, you can:<br>&nbsp;&nbsp;&nbsp; 1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on";
+				err += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jQuery.js inclusion and remove it";
+				err += "</div>";
+				err += "</div>";
+				var slider = document.getElementById(sliderID); slider.innerHTML = err; slider.style.display = "block";
+			}
+		}
+	</script>
+	<link property="stylesheet" rel='stylesheet' id='vc_tta_style-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/js_composer/assets/css/js_composer_tta.min.css?ver=6.6.0'
+		type='text/css' media='all' />
+	<link property="stylesheet" rel='stylesheet' id='e-animations-css'
+		href='http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.3.1'
+		type='text/css' media='all' />
+	<script type='text/javascript' src='http://honor.ancorathemes.com/wp-includes/js/jquery/ui/core.min.js?ver=1.12.1'
+		id='jquery-ui-core-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.12.1'
+		id='jquery-ui-datepicker-js'></script>
+	<script type='text/javascript' id='jquery-ui-datepicker-js-after'>
+		jQuery(document).ready(function (jQuery) { jQuery.datepicker.setDefaults({ "closeText": "Close", "currentText": "Today", "monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "monthNamesShort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], "nextText": "Next", "prevText": "Previous", "dayNames": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "dayNamesShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "dayNamesMin": ["S", "M", "T", "W", "T", "F", "S"], "dateFormat": "MM d, yy", "firstDay": 1, "isRTL": false }); });
+	</script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/booked/assets/js/spin.min.js?ver=2.0.1'
+		id='booked-spin-js-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/booked/assets/js/spin.jquery.js?ver=2.0.1'
+		id='booked-spin-jquery-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/booked/assets/js/tooltipster/js/jquery.tooltipster.min.js?ver=3.3.0'
+		id='booked-tooltipster-js'></script>
+	<script type='text/javascript' id='booked-functions-js-extra'>
+		/* <![CDATA[ */
+		var booked_js_vars = { "ajax_url": "http:\/\/honor.ancorathemes.com\/wp-admin\/admin-ajax.php", "profilePage": "", "publicAppointments": "", "i18n_confirm_appt_delete": "Are you sure you want to cancel this appointment?", "i18n_please_wait": "Please wait ...", "i18n_wrong_username_pass": "Wrong username\/password combination.", "i18n_fill_out_required_fields": "Please fill out all required fields.", "i18n_guest_appt_required_fields": "Please enter your name to book an appointment.", "i18n_appt_required_fields": "Please enter your name, your email address and choose a password to book an appointment.", "i18n_appt_required_fields_guest": "Please fill in all \"Information\" fields.", "i18n_password_reset": "Please check your email for instructions on resetting your password.", "i18n_password_reset_error": "That username or email is not recognized." };
+/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/booked/assets/js/functions.js?ver=2.3.5'
+		id='booked-functions-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=7.4.4'
+		id='wp-polyfill-js'></script>
+	<script type='text/javascript' id='wp-polyfill-js-after'>
+		('fetch' in window) || document.write('<script src="http://honor.ancorathemes.com/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>'); (document.contains) || document.write('<script src="http://honor.ancorathemes.com/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0"></scr' + 'ipt>'); (window.DOMRect) || document.write('<script src="http://honor.ancorathemes.com/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0"></scr' + 'ipt>'); (window.URL && window.URL.prototype && window.URLSearchParams) || document.write('<script src="http://honor.ancorathemes.com/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4"></scr' + 'ipt>'); (window.FormData && window.FormData.prototype.keys) || document.write('<script src="http://honor.ancorathemes.com/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>'); (Element.prototype.matches && Element.prototype.closest) || document.write('<script src="http://honor.ancorathemes.com/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>'); ('objectFit' in document.documentElement.style) || document.write('<script src="http://honor.ancorathemes.com/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js?ver=2.3.4"></scr' + 'ipt>');
+	</script>
+	<script type='text/javascript' id='contact-form-7-js-extra'>
+		/* <![CDATA[ */
+		var wpcf7 = { "api": { "root": "http:\/\/honor.ancorathemes.com\/wp-json\/", "namespace": "contact-form-7\/v1" }, "cached": "1" };
+/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.4.2'
+		id='contact-form-7-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.4.8'
+		id='tp-tools-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.4.11'
+		id='revmin-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/trx_addons/js/swiper/swiper.jquery.min.js'
+		id='swiperslider-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/trx_addons/js/magnific/jquery.magnific-popup.min.js'
+		id='magnific-popup-js'></script>
+	<script type='text/javascript' id='trx_addons-js-extra'>
+		/* <![CDATA[ */
+		var TRX_ADDONS_STORAGE = { "ajax_url": "http:\/\/honor.ancorathemes.com\/wp-admin\/admin-ajax.php", "ajax_nonce": "baa9b560d2", "site_url": "http:\/\/honor.ancorathemes.com", "post_id": "2", "vc_edit_mode": "0", "popup_engine": "magnific", "animate_inner_links": "0", "menu_collapse": "1", "menu_collapse_icon": "trx_addons_icon-ellipsis-vert", "user_logged_in": "0", "email_mask": "^([a-zA-Z0-9_\\-]+\\.)*[a-zA-Z0-9_\\-]+@[a-z0-9_\\-]+(\\.[a-z0-9_\\-]+)*\\.[a-z]{2,6}$", "msg_ajax_error": "Invalid server answer!", "msg_magnific_loading": "Loading image", "msg_magnific_error": "Error loading image", "msg_error_like": "Error saving your like! Please, try again later.", "msg_field_name_empty": "The name can't be empty", "msg_field_email_empty": "Too short (or empty) email address", "msg_field_email_not_valid": "Invalid email address", "msg_field_text_empty": "The message text can't be empty", "msg_search_error": "Search error! Try again later.", "msg_send_complete": "Send message complete!", "msg_send_error": "Transmit failed!", "ajax_views": "", "menu_cache": [".menu_mobile_inner > nav > ul"], "login_via_ajax": "1", "msg_login_empty": "The Login field can't be empty", "msg_login_long": "The Login field is too long", "msg_password_empty": "The password can't be empty and shorter then 4 characters", "msg_password_long": "The password is too long", "msg_login_success": "Login success! The page should be reloaded in 3 sec.", "msg_login_error": "Login failed!", "msg_not_agree": "Please, read and check 'Terms and Conditions'", "msg_email_long": "E-mail address is too long", "msg_email_not_valid": "E-mail address is invalid", "msg_password_not_equal": "The passwords in both fields are not equal", "msg_registration_success": "Registration success! Please log in!", "msg_registration_error": "Registration failed!", "scroll_to_anchor": "1", "update_location_from_anchor": "0", "msg_sc_googlemap_not_avail": "Googlemap service is not available", "msg_sc_googlemap_geocoder_error": "Error while geocode address" };
+/* ]]> */
+	</script>
+	<script type='text/javascript' src='http://honor.ancorathemes.com/wp-content/plugins/trx_addons/js/trx_addons.js'
+		id='trx_addons-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'
+		id='jquery-blockui-js'></script>
+	<script type='text/javascript' id='wc-add-to-cart-js-extra'>
+		/* <![CDATA[ */
+		var wc_add_to_cart_params = { "ajax_url": "\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/?wc-ajax=%%endpoint%%", "i18n_view_cart": "View cart", "cart_url": "http:\/\/honor.ancorathemes.com\/cart\/", "is_cart": "", "cart_redirect_after_add": "no" };
+/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=5.5.1'
+		id='wc-add-to-cart-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4'
+		id='js-cookie-js'></script>
+	<script type='text/javascript' id='woocommerce-js-extra'>
+		/* <![CDATA[ */
+		var woocommerce_params = { "ajax_url": "\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/?wc-ajax=%%endpoint%%" };
+/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=5.5.1'
+		id='woocommerce-js'></script>
+	<script type='text/javascript' id='wc-cart-fragments-js-extra'>
+		/* <![CDATA[ */
+		var wc_cart_fragments_params = { "ajax_url": "\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_b136cf6f71822a8141734ede100d7b41", "fragment_name": "wc_fragments_b136cf6f71822a8141734ede100d7b41", "request_timeout": "5000" };
+/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=5.5.1'
+		id='wc-cart-fragments-js'></script>
+	<script type='text/javascript' id='booked-fea-js-js-extra'>
+		/* <![CDATA[ */
+		var booked_fea_vars = { "ajax_url": "http:\/\/honor.ancorathemes.com\/wp-admin\/admin-ajax.php", "i18n_confirm_appt_delete": "Are you sure you want to cancel this appointment?", "i18n_confirm_appt_approve": "Are you sure you want to approve this appointment?" };
+/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/booked/includes/add-ons/frontend-agents/js/functions.js?ver=2.3.5'
+		id='booked-fea-js-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/js_composer/assets/js/vendors/woocommerce-add-to-cart.js?ver=6.6.0'
+		id='vc_woocommerce-add-to-cart-js-js'></script>
+	<script type='text/javascript' id='rocket-browser-checker-js-after'>
+		"use strict"; var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || !1, descriptor.configurable = !0, "value" in descriptor && (descriptor.writable = !0), Object.defineProperty(target, descriptor.key, descriptor) } } return function (Constructor, protoProps, staticProps) { return protoProps && defineProperties(Constructor.prototype, protoProps), staticProps && defineProperties(Constructor, staticProps), Constructor } }(); function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function") } var RocketBrowserCompatibilityChecker = function () { function RocketBrowserCompatibilityChecker(options) { _classCallCheck(this, RocketBrowserCompatibilityChecker), this.passiveSupported = !1, this._checkPassiveOption(this), this.options = !!this.passiveSupported && options } return _createClass(RocketBrowserCompatibilityChecker, [{ key: "_checkPassiveOption", value: function (self) { try { var options = { get passive() { return !(self.passiveSupported = !0) } }; window.addEventListener("test", null, options), window.removeEventListener("test", null, options) } catch (err) { self.passiveSupported = !1 } } }, { key: "initRequestIdleCallback", value: function () { !1 in window && (window.requestIdleCallback = function (cb) { var start = Date.now(); return setTimeout(function () { cb({ didTimeout: !1, timeRemaining: function () { return Math.max(0, 50 - (Date.now() - start)) } }) }, 1) }), !1 in window && (window.cancelIdleCallback = function (id) { return clearTimeout(id) }) } }, { key: "isDataSaverModeOn", value: function () { return "connection" in navigator && !0 === navigator.connection.saveData } }, { key: "supportsLinkPrefetch", value: function () { var elem = document.createElement("link"); return elem.relList && elem.relList.supports && elem.relList.supports("prefetch") && window.IntersectionObserver && "isIntersecting" in IntersectionObserverEntry.prototype } }, { key: "isSlowConnection", value: function () { return "connection" in navigator && "effectiveType" in navigator.connection && ("2g" === navigator.connection.effectiveType || "slow-2g" === navigator.connection.effectiveType) } }]), RocketBrowserCompatibilityChecker }();
+	</script>
+	<script type='text/javascript' id='rocket-delay-js-js-after'>
+		(function () {
+			"use strict"; var e = function () { function n(e, t) { for (var r = 0; r < t.length; r++) { var n = t[r]; n.enumerable = n.enumerable || !1, n.configurable = !0, "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n) } } return function (e, t, r) { return t && n(e.prototype, t), r && n(e, r), e } }(); function n(e, t) { if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function") } var t = function () { function r(e, t) { n(this, r), this.attrName = "data-rocketlazyloadscript", this.browser = t, this.options = this.browser.options, this.triggerEvents = e, this.userEventListener = this.triggerListener.bind(this) } return e(r, [{ key: "init", value: function () { this._addEventListener(this) } }, { key: "reset", value: function () { this._removeEventListener(this) } }, { key: "_addEventListener", value: function (t) { this.triggerEvents.forEach(function (e) { return window.addEventListener(e, t.userEventListener, t.options) }) } }, { key: "_removeEventListener", value: function (t) { this.triggerEvents.forEach(function (e) { return window.removeEventListener(e, t.userEventListener, t.options) }) } }, { key: "_loadScriptSrc", value: function () { var r = this, e = document.querySelectorAll("script[" + this.attrName + "]"); 0 !== e.length && Array.prototype.slice.call(e).forEach(function (e) { var t = e.getAttribute(r.attrName); e.setAttribute("src", t), e.removeAttribute(r.attrName) }), this.reset() } }, { key: "triggerListener", value: function () { this._loadScriptSrc(), this._removeEventListener(this) } }], [{ key: "run", value: function () { RocketBrowserCompatibilityChecker && new r(["keydown", "mouseover", "touchmove", "touchstart", "wheel"], new RocketBrowserCompatibilityChecker({ passive: !0 })).init() } }]), r }(); t.run();
+		}());
+	</script>
+	<script type='text/javascript' id='rocket-preload-links-js-extra'>
+		/* <![CDATA[ */
+		var RocketPreloadLinksConfig = { "excludeUris": "\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/checkout\/|\/cart\/|\/my-account\/|\/wc-api\/v(.*)|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php", "usesTrailingSlash": "1", "imageExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif", "fileExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm", "siteUrl": "http:\/\/honor.ancorathemes.com", "onHoverDelay": "100", "rateThrottle": "3" };
+/* ]]> */
+	</script>
+	<script type='text/javascript' id='rocket-preload-links-js-after'>
+		(function () {
+			"use strict"; var r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) { return typeof e } : function (e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }, e = function () { function i(e, t) { for (var n = 0; n < t.length; n++) { var i = t[n]; i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i) } } return function (e, t, n) { return t && i(e.prototype, t), n && i(e, n), e } }(); function i(e, t) { if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function") } var t = function () { function n(e, t) { i(this, n), this.browser = e, this.config = t, this.options = this.browser.options, this.prefetched = new Set, this.eventTime = null, this.threshold = 1111, this.numOnHover = 0 } return e(n, [{ key: "init", value: function () { !this.browser.supportsLinkPrefetch() || this.browser.isDataSaverModeOn() || this.browser.isSlowConnection() || (this.regex = { excludeUris: RegExp(this.config.excludeUris, "i"), images: RegExp(".(" + this.config.imageExt + ")$", "i"), fileExt: RegExp(".(" + this.config.fileExt + ")$", "i") }, this._initListeners(this)) } }, { key: "_initListeners", value: function (e) { -1 < this.config.onHoverDelay && document.addEventListener("mouseover", e.listener.bind(e), e.listenerOptions), document.addEventListener("mousedown", e.listener.bind(e), e.listenerOptions), document.addEventListener("touchstart", e.listener.bind(e), e.listenerOptions) } }, { key: "listener", value: function (e) { var t = e.target.closest("a"), n = this._prepareUrl(t); if (null !== n) switch (e.type) { case "mousedown": case "touchstart": this._addPrefetchLink(n); break; case "mouseover": this._earlyPrefetch(t, n, "mouseout") } } }, { key: "_earlyPrefetch", value: function (t, e, n) { var i = this, r = setTimeout(function () { if (r = null, 0 === i.numOnHover) setTimeout(function () { return i.numOnHover = 0 }, 1e3); else if (i.numOnHover > i.config.rateThrottle) return; i.numOnHover++, i._addPrefetchLink(e) }, this.config.onHoverDelay); t.addEventListener(n, function e() { t.removeEventListener(n, e, { passive: !0 }), null !== r && (clearTimeout(r), r = null) }, { passive: !0 }) } }, { key: "_addPrefetchLink", value: function (i) { return this.prefetched.add(i.href), new Promise(function (e, t) { var n = document.createElement("link"); n.rel = "prefetch", n.href = i.href, n.onload = e, n.onerror = t, document.head.appendChild(n) }).catch(function () { }) } }, { key: "_prepareUrl", value: function (e) { if (null === e || "object" !== (void 0 === e ? "undefined" : r(e)) || !1 in e || -1 === ["http:", "https:"].indexOf(e.protocol)) return null; var t = e.href.substring(0, this.config.siteUrl.length), n = this._getPathname(e.href, t), i = { original: e.href, protocol: e.protocol, origin: t, pathname: n, href: t + n }; return this._isLinkOk(i) ? i : null } }, { key: "_getPathname", value: function (e, t) { var n = t ? e.substring(this.config.siteUrl.length) : e; return n.startsWith("/") || (n = "/" + n), this._shouldAddTrailingSlash(n) ? n + "/" : n } }, { key: "_shouldAddTrailingSlash", value: function (e) { return this.config.usesTrailingSlash && !e.endsWith("/") && !this.regex.fileExt.test(e) } }, { key: "_isLinkOk", value: function (e) { return null !== e && "object" === (void 0 === e ? "undefined" : r(e)) && (!this.prefetched.has(e.href) && e.origin === this.config.siteUrl && -1 === e.href.indexOf("?") && -1 === e.href.indexOf("#") && !this.regex.excludeUris.test(e.href) && !this.regex.images.test(e.href)) } }], [{ key: "run", value: function () { "undefined" != typeof RocketPreloadLinksConfig && new n(new RocketBrowserCompatibilityChecker({ capture: !0, passive: !0 }), RocketPreloadLinksConfig).init() } }]), n }(); t.run();
+		}());
+	</script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/trx_addons/components/cpt/layouts/shortcodes/menu/superfish.min.js'
+		id='superfish-js'></script>
+	<script type='text/javascript' id='booked-wc-fe-functions-js-extra'>
+		/* <![CDATA[ */
+		var booked_wc_variables = { "prefix": "booked_wc_", "ajaxurl": "http:\/\/honor.ancorathemes.com\/wp-admin\/admin-ajax.php", "i18n_confirm_appt_edit": "Are you sure you want to change the appointment date? By doing so, the appointment date will need to be approved again.", "i18n_pay": "Are you sure you want to add the appointment to cart and go to checkout?", "i18n_mark_paid": "Are you sure you want to mark this appointment as \"Paid\"?", "i18n_paid": "Paid", "i18n_awaiting_payment": "Awaiting Payment", "checkout_page": "http:\/\/honor.ancorathemes.com\/checkout\/" };
+/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/booked/includes/add-ons/woocommerce-payments//js/frontend-functions.js?ver=5.7.1'
+		id='booked-wc-fe-functions-js'></script>
+	<script type='text/javascript' id='honor-init-js-extra'>
+		/* <![CDATA[ */
+		var HONOR_STORAGE = { "ajax_url": "http:\/\/honor.ancorathemes.com\/wp-admin\/admin-ajax.php", "ajax_nonce": "baa9b560d2", "site_url": "http:\/\/honor.ancorathemes.com", "theme_url": "http:\/\/honor.ancorathemes.com\/wp-content\/themes\/honor", "site_scheme": "scheme_default", "user_logged_in": "", "mobile_layout_width": "767", "mobile_device": "", "menu_side_stretch": "", "menu_side_icons": "1", "background_video": "", "use_mediaelements": "1", "comment_maxlength": "1000", "admin_mode": "", "email_mask": "^([a-zA-Z0-9_\\-]+\\.)*[a-zA-Z0-9_\\-]+@[a-z0-9_\\-]+(\\.[a-z0-9_\\-]+)*\\.[a-z]{2,6}$", "strings": { "ajax_error": "Invalid server answer!", "error_global": "Error data validation!", "name_empty": "The name can&#039;t be empty", "name_long": "Too long name", "email_empty": "Too short (or empty) email address", "email_long": "Too long email address", "email_not_valid": "Invalid email address", "text_empty": "The message text can&#039;t be empty", "text_long": "Too long message text" }, "alter_link_color": "#fe7259", "button_hover": "default", "stretch_tabs_area": "1" };
+/* ]]> */
+	</script>
+	<script type='text/javascript' src='http://honor.ancorathemes.com/wp-content/themes/honor/js/__scripts.js'
+		id='honor-init-js'></script>
+	<script type='text/javascript' id='mediaelement-core-js-before'>
+		var mejsL10n = { "language": "en", "strings": { "mejs.download-file": "Download File", "mejs.install-flash": "You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/", "mejs.fullscreen": "Fullscreen", "mejs.play": "Play", "mejs.pause": "Pause", "mejs.time-slider": "Time Slider", "mejs.time-help-text": "Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.", "mejs.live-broadcast": "Live Broadcast", "mejs.volume-help-text": "Use Up\/Down Arrow keys to increase or decrease volume.", "mejs.unmute": "Unmute", "mejs.mute": "Mute", "mejs.volume-slider": "Volume Slider", "mejs.video-player": "Video Player", "mejs.audio-player": "Audio Player", "mejs.captions-subtitles": "Captions\/Subtitles", "mejs.captions-chapters": "Chapters", "mejs.none": "None", "mejs.afrikaans": "Afrikaans", "mejs.albanian": "Albanian", "mejs.arabic": "Arabic", "mejs.belarusian": "Belarusian", "mejs.bulgarian": "Bulgarian", "mejs.catalan": "Catalan", "mejs.chinese": "Chinese", "mejs.chinese-simplified": "Chinese (Simplified)", "mejs.chinese-traditional": "Chinese (Traditional)", "mejs.croatian": "Croatian", "mejs.czech": "Czech", "mejs.danish": "Danish", "mejs.dutch": "Dutch", "mejs.english": "English", "mejs.estonian": "Estonian", "mejs.filipino": "Filipino", "mejs.finnish": "Finnish", "mejs.french": "French", "mejs.galician": "Galician", "mejs.german": "German", "mejs.greek": "Greek", "mejs.haitian-creole": "Haitian Creole", "mejs.hebrew": "Hebrew", "mejs.hindi": "Hindi", "mejs.hungarian": "Hungarian", "mejs.icelandic": "Icelandic", "mejs.indonesian": "Indonesian", "mejs.irish": "Irish", "mejs.italian": "Italian", "mejs.japanese": "Japanese", "mejs.korean": "Korean", "mejs.latvian": "Latvian", "mejs.lithuanian": "Lithuanian", "mejs.macedonian": "Macedonian", "mejs.malay": "Malay", "mejs.maltese": "Maltese", "mejs.norwegian": "Norwegian", "mejs.persian": "Persian", "mejs.polish": "Polish", "mejs.portuguese": "Portuguese", "mejs.romanian": "Romanian", "mejs.russian": "Russian", "mejs.serbian": "Serbian", "mejs.slovak": "Slovak", "mejs.slovenian": "Slovenian", "mejs.spanish": "Spanish", "mejs.swahili": "Swahili", "mejs.swedish": "Swedish", "mejs.tagalog": "Tagalog", "mejs.thai": "Thai", "mejs.turkish": "Turkish", "mejs.ukrainian": "Ukrainian", "mejs.vietnamese": "Vietnamese", "mejs.welsh": "Welsh", "mejs.yiddish": "Yiddish" } };
+	</script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.16'
+		id='mediaelement-core-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=5.7.1'
+		id='mediaelement-migrate-js'></script>
+	<script type='text/javascript' id='mediaelement-js-extra'>
+		/* <![CDATA[ */
+		var _wpmejsSettings = { "pluginPath": "\/wp-includes\/js\/mediaelement\/", "classPrefix": "mejs-", "stretching": "responsive" };
+/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=5.7.1'
+		id='wp-mediaelement-js'></script>
+	<script type='text/javascript' src='http://honor.ancorathemes.com/wp-includes/js/wp-embed.min.js?ver=5.7.1'
+		id='wp-embed-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.6.0'
+		id='wpb_composer_front_js-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/js_composer/assets/lib/vc_accordion/vc-accordion.min.js?ver=6.6.0'
+		id='vc_accordion_script-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/js_composer/assets/lib/vc-tta-autoplay/vc-tta-autoplay.min.js?ver=6.6.0'
+		id='vc_tta_autoplay_script-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/js_composer/assets/lib/vc_tabs/vc-tabs.min.js?ver=6.6.0'
+		id='vc_tabs_script-js'></script>
+	<script type='text/javascript' src='http://honor.ancorathemes.com/wp-includes/js/jquery/ui/tabs.min.js?ver=1.12.1'
+		id='jquery-ui-tabs-js'></script>
+	<script type='text/javascript' src='http://honor.ancorathemes.com/wp-includes/js/jquery/ui/effect.min.js?ver=1.12.1'
+		id='jquery-effects-core-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-includes/js/jquery/ui/effect-fade.min.js?ver=1.12.1'
+		id='jquery-effects-fade-js'></script>
+	<script type='text/javascript' defer
+		src='http://honor.ancorathemes.com/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js?ver=4.8.6'
+		id='mc4wp-forms-api-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.3.1'
+		id='elementor-webpack-runtime-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.3.1'
+		id='elementor-frontend-modules-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2'
+		id='elementor-waypoints-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6'
+		id='swiper-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=3.3.1'
+		id='share-link-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.8.1'
+		id='elementor-dialog-js'></script>
+	<script type='text/javascript' id='elementor-frontend-js-before'>
+		var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false, "isScriptDebug": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "download": "Download", "downloadImage": "Download image", "fullscreen": "Fullscreen", "zoom": "Zoom", "share": "Share", "playVideo": "Play Video", "previous": "Previous", "next": "Next", "close": "Close" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1024, "xl": 1440, "xxl": 1600 }, "responsive": { "breakpoints": { "mobile": { "label": "Mobile", "value": 767, "direction": "max", "is_enabled": true, "default_value": 767 }, "mobile_extra": { "label": "Mobile Extra", "value": 880, "direction": "max", "is_enabled": false, "default_value": 880 }, "tablet": { "label": "Tablet", "value": 1023, "direction": "max", "is_enabled": true, "default_value": 1024 }, "tablet_extra": { "label": "Tablet Extra", "value": 1365, "direction": "max", "is_enabled": false, "default_value": 1365 }, "laptop": { "label": "Laptop", "value": 1620, "direction": "max", "is_enabled": false, "default_value": 1620 }, "widescreen": { "label": "Widescreen", "value": 2400, "direction": "min", "is_enabled": false, "default_value": 2400 } } }, "version": "3.3.1", "is_static": false, "experimentalFeatures": { "e_import_export": true, "landing-pages": true, "elements-color-picker": true, "admin-top-bar": true }, "urls": { "assets": "http:\/\/honor.ancorathemes.com\/wp-content\/plugins\/elementor\/assets\/" }, "settings": { "page": [], "editorPreferences": [] }, "kit": { "stretched_section_container": ".page_wrap", "viewport_tablet": 1023, "active_breakpoints": ["viewport_mobile", "viewport_tablet"], "global_image_lightbox": "yes", "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description" }, "post": { "id": 2, "title": "Home%204%20%28Store%29%20%E2%80%93%20HONOR", "excerpt": "", "featuredImage": false } };
+	</script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.3.1'
+		id='elementor-frontend-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=3.3.1'
+		id='preloaded-modules-js'></script>
+	<script type='text/javascript'
+		src='http://honor.ancorathemes.com/wp-content/plugins/trx_addons/components/shortcodes/skills/chart.min.js'
+		id='trx_addons-chart-js'></script>
+</body>
+
+</html>

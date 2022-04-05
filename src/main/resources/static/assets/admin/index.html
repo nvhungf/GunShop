@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Java 6 Store Administration</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.2.1/exceljs.min.js" integrity="sha512-DPjFYmSXYGB7/5k/Z4h5iw1i29Vl//jj3I7v79DRy+T0o4KssDku6Hf7ImlIV87KmNIh+euT5H0LJhQmTnbC/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<link rel="stylesheet" href="/assets/css/shopping-cart-app.css"/>
+<link rel="stylesheet" href="../css/css.css"/>
+</head>
+<body class="container" ng-app="admin-app">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Website Administration</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!category">Category</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!product">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!order">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!authorize">Authorizing</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#!iventory">Iventory</a>
+            </li>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#!chatbox">Chat Box</a>
+            </li>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#!customer">Customer</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="/security/logoff">Sign Out</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <main>
+        <p class="ng-view" />
+    </main>
+    <footer>
+        <div class="panel panel-default">
+            <div class="panel-body text-center">
+                <h3>Honor Gun Shop &copy; 2021.ALL rights reserved.</h3>
+            </div>
+        </div>
+    </footer>
+    <script src="/assets/js/jsmenu.js"></script>
+    <script src="/assets/admin/admin-app.js"></script>
+    <script src="/assets/admin/chatbox/chatbox-ctrl.js"></script>
+    <script src="/assets/admin/iventory/iventory-ctrl.js"></script>
+     <script src="/assets/admin/customer/customer-ctrl.js"></script>
+    <script src="/assets/admin/category/category-ctrl.js"></script>
+    <script src="/assets/admin/order/order-ctrl.js"></script>
+    <script src="/assets/admin/product/product-ctrl.js"></script>
+    <script src="/assets/admin/authority/authority-ctrl.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

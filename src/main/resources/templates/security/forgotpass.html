@@ -1,0 +1,46 @@
+<div xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+	<main>
+		<div class="content_wrap">
+			<div class="content">
+				<article id="post-782"
+					class="post_item_single post_type_page post-782 page type-page status-publish hentry">
+					<div class="post_content entry-content">
+						<div class="woocommerce">
+							<div class="woocommerce-notices-wrapper"></div>
+							<form th:action="@{/home/account/send}"   method="post"
+								class="woocommerce-ResetPassword lost_reset_password">
+								<p>Lost your password? Please enter your email address.</p>
+								<p
+									class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
+									<label for="user_login">Email</label> <input
+										class="woocommerce-Input woocommerce-Input--text input-text fill_inited"
+										type="text" name="to" id="to"
+										autocomplete="username">
+								</p>
+								<div class="clear"></div>
+								<p class="woocommerce-form-row form-row">
+									<input type="hidden" name="wc_reset_password" value="true">
+									<button  class="woocommerce-Button button"
+										value="Reset password">Reset password</button>
+								</p>
+								
+								<div th:text="${message}" style="color: red; font-variant: inherit; font-style: italic;"></div>
+								
+							</form>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="sidebar left widget_area" role="complementary">
+				<div class="sidebar_inner">
+					<aside id="woocommerce_product_categories-2"
+						class="widget woocommerce widget_product_categories">
+						<h5 class="widget_title">Categories</h5>
+						<div th:replace="/category/_category.html"></div>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</main>
+</div>

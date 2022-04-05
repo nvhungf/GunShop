@@ -1,0 +1,56 @@
+
+<div class="panel panel-default">
+	<div class="panel-heading text-center">CUSTOMER LIST</div>
+	<table class="table table-condensed primary">
+		<thead style="">
+			<tr>
+				<th>UserName</th>
+				<th>Password</th>
+				<th>Fullname</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th>Address</th>
+				<th></th>
+			</tr>
+		</thead>
+		<thead >
+<!-- 		<tr ng-repeat="or in order" style="font-weight:700; color: red " "> <td> Total Order : {{or.count}} Order </td>  </tr>
+		<tr ng-repeat="to in total" style="font-weight:700; color: red"font-size: 600"> <td> Total Price : $ {{to.sum}} </td>  </tr>
+		 -->
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in pager.items">
+				<td>{{item.username}}</td>
+				<td>{{item.password}}</td>
+				<td>{{item.fullname}}</td>
+				<td>{{item.email}}</td>
+				<td>{{item.Phone}}</td>
+				<td>{{item.phone}}</td>
+				<td>{{item.address}}</td>
+				<td>
+					<div class="btn-group btn-group-xs">
+						<button ng-click="edit(item)" class="btn btn-light far fa-eye"></button>
+						 <button ng-click="delete(item)"
+							class="btn btn-danger fa fa-trash-alt"></button> 
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="panel-footer text-center">
+		<button ng-click="pager.first()" class="btn">
+			<b class="fas fa-fast-backward"></b>
+		</button>
+		<button ng-click="pager.prev()" class="btn btn-primary">
+			<b class="fas fa-step-backward"></b>
+		</button>
+		<button class="btn">{{pager.page+1}} of {{pager.count}}</button>
+		<button ng-click="pager.next()" class="btn btn-primary">
+			<b class="fas fa-step-forward"></b>
+		</button>
+		<button ng-click="pager.last()" class="btn">
+			<b class="fas fa-fast-forward"></b>
+		</button>
+	</div>
+</div>

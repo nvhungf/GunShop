@@ -1,0 +1,19 @@
+<div xmlns:th="http://www.thymeleaf.org">
+	<form method="post" action="/product/search-price">
+		<div class="price_slider_wrapper">
+			<div class="price_slider" style="display: none;"></div>
+			<div class="price_slider_amount" data-step="10">
+				<input type="text" id="min_price" name="min" value="30"
+					data-min="30" placeholder="Min price" /> <input type="text"
+					id="max_price" name="max" value="1000" data-max="1000"
+					placeholder="Max price" />
+				<button type="submit" class="button">Filter</button>
+				<div class="price_label" style="display: none;">
+					Price: <span class="from"></span> &mdash; <span class="to"></span>
+				</div>
+				<input type="hidden" name="q" value="/product-category/accessories/" />
+				<div class="clear"></div>
+			</div>
+		</div>
+	</form>
+</div>

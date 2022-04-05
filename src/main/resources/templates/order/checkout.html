@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+
+<head>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<main>
+
+		<div class="content_wrap">
+			<div class="content">
+				<br> <br> <br> <br> <br> <br>
+				<article th:fragment="shopping_cart" id="post-784"
+					class="post_item_single post_type_page post-784 page type-page status-publish hentry">
+					<div class="post_content entry-content">
+						<div class="vc_row wpb_row vc_row-fluid">
+							<div
+								class="wpb_column vc_column_container vc_col-sm-12 sc_layouts_column_icons_position_left">
+								<div class="vc_column-inner">
+									<div class="wpb_wrapper">
+										<div class="woocommerce">
+											<div class="woocommerce-notices-wrapper"></div>
+											<form class="woocommerce-cart-form">
+
+												<table
+													class="shop_table shop_table_responsive cart woocommerce-cart-form__contents"
+													cellspacing="0">
+													<thead>
+														<tr>
+															<th class="product-remove">&nbsp;</th>
+															<th class="product-thumbnail">&nbsp;</th>
+															<th class="product-name">Product</th>
+															<th class="product-price">Price</th>
+															<th class="product-quantity">Quantity</th>
+															<th class="product-subtotal">Subtotal</th>
+														</tr>
+													</thead>
+													<tbody>
+
+														<tr ng-repeat="item in cart.items"
+															class="woocommerce-cart-form__cart-item cart_item">
+
+															<td class="product-remove"><a
+																	ng-click="cart.remove(item.id)" class="remove"
+																	aria-label="Remove this item" data-product_id="480"
+																	data-product_sku="">x</a></td>
+
+															<td class="product-thumbnail"><img width="362" height="362"
+																	src="/assets/images/{{item.image}}"
+																	class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+																	alt="" loading="lazy"
+																	sizes="(max-width: 362px) 100vw, 362px"></td>
+
+															<td class="product-name" data-title="Product"><a
+																	th:href="@{|/product/detail/{{item.id}}|}">{{item.name}}</a>
+															<td class="product-price" data-title="Price"><span
+																	class="woocommerce-Price-amount amount"><bdi>
+																		<span
+																			class="woocommerce-Price-currencySymbol">$</span>{{item.price
+																		| number : 2}}</bdi> </span></td>
+
+															<td class="product-quantity" data-title="Quantity">
+																<div class="quantity">
+																	<input ng-change="cart.saveToLocalStorage()"
+																		type="number" ng-model="item.qty" min="1"
+																		style="width: 50px; align-items: center"> <span
+																		class="q_dec"></span>
+																</div>
+															</td>
+
+															<td class="product-subtotal" data-title="Subtotal">
+																<span class="woocommerce-Price-amount amount"> <span
+																		class="woocommerce-Price-currencySymbol">$</span>
+																	<input value="{{item.qty*item.price
+																	| number : 2}} " style="width: 100px" readonly />
+																</span>
+															</td>
+														</tr>
+
+
+														<tr>
+															<td colspan="6" class="actions">
+
+																<div class="coupon">
+																	<button ng-click="cart.clear()"
+																		class="button">Clear</button>
+																</div>
+
+																<button type="submit" class="button" name="update_cart"
+																	value="Update cart" disabled=""
+																	aria-disabled="true">Update
+																	cart</button> <input type="hidden"
+																	id="woocommerce-cart-nonce"
+																	name="woocommerce-cart-nonce"
+																	value="67212e0309"><input type="hidden"
+																	name="_wp_http_referer" value="/cart/">
+															</td>
+														</tr>
+
+													</tbody>
+												</table>
+											</form>
+
+
+											<div class="cart-collaterals">
+												<div class="cart_totals ">
+
+
+													<h2>Cart totals</h2>
+
+													<table cellspacing="0" class="shop_table shop_table_responsive">
+
+														<tbody>
+															<tr class="cart-subtotal">
+																<th>Subtotal</th>
+																<td data-title="Subtotal"><span
+																		class="woocommerce-Price-amount amount"><bdi>
+																			<span
+																				class="woocommerce-Price-currencySymbol">$</span>
+																			<span>{{cart.amount}}</span></bdi> </span>
+																</td>
+															</tr>
+
+
+
+
+
+
+															<tr class="order-total">
+																<th>Total</th>
+																<td data-title="Total"><strong><span
+																			class="woocommerce-Price-amount amount"><bdi>
+																				<span
+																					class="woocommerce-Price-currencySymbol">$</span>
+																				<span>{{cart.amount}}</span></bdi></span></strong>
+																</td>
+															</tr>
+
+
+														</tbody>
+													</table>
+
+													<div class="wc-proceed-to-checkout">
+
+														<a th:href="@{/order/checkout}"
+															class="checkout-button button alt wc-forward">
+															Checkout</a>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- .entry-content -->
+				</article>
+			</div>
+			<!-- </.content> -->
+			<div class="sidebar left widget_area" role="complementary">
+				<th:block th:if="${#request.remoteUser}">
+					<div class="col-1">
+						<div class="woocommerce-billing-fields">
+							<h3>Billing details</h3>
+							<div th:each="acc:${account}" class="woocommerce-billing-fields__field-wrapper">
+								<p class="form-row form-row-first validate-required" id="billing_first_name_field"
+									data-priority="10" hidden>
+									<label for="billing_first_name" class="">username&nbsp;<abbr class="required"
+											title="required">*</abbr></label><span class="woocommerce-input-wrapper">
+										<div hidden class="form-control" id="username">[[${#request.remoteUser}]]</div>
+									</span>
+								</p>
+								<p class="form-row form-row-first validate-required" id="billing_first_name_field"
+									data-priority="10">
+									<label for="billing_first_name" class="">Fullname&nbsp;<abbr class="required"
+											title="required">*</abbr></label><span class="woocommerce-input-wrapper">
+										<br> <input type="text" class="input-text fill_inited" name="billing_first_name"
+											id="billing_first_name" placeholder="" th:value="${acc.fullname}"
+											autocomplete="given-name"></span>
+								</p>
+								<p class="form-row form-row-first validate-required" id="billing_first_name_field"
+									data-priority="10">
+									<label for="billing_first_name" class="">Email&nbsp;<abbr class="required"
+											title="required">*</abbr></label><span class="woocommerce-input-wrapper">
+										<br> <input type="text" class="input-text fill_inited" name="billing_first_name"
+											id="billing_first_name" placeholder="" th:value="${acc.email}"
+											autocomplete="given-name"></span>
+								</p>
+								<p class="form-row form-row-first validate-required" id="billing_first_name_field"
+									data-priority="10">
+									<label for="billing_first_name" class="">Phone&nbsp;<abbr class="required"
+											title="required">*</abbr></label><span class="woocommerce-input-wrapper">
+										<br> <input type="text" class="input-text fill_inited" name="billing_first_name"
+											id="billing_first_name" placeholder="" th:value="${acc.phone}"
+											autocomplete="given-name"></span>
+								</p>
+								<p class="form-row form-row-first validate-required" id="billing_first_name_field"
+									data-priority="10">
+									<label for="billing_first_name" class="">Address&nbsp;<abbr class="required"
+											title="required">*</abbr></label><span class="woocommerce-input-wrapper">
+										<br> <input type="text" class="input-text fill_inited" name="address"
+											placeholder="" ng-model="order.address" th:value="${acc.address}"
+											autocomplete="given-name"></span>
+								</p>
+								<p>The input's valid state is:</p>
+								<h1>{{address.$valid}}</h1>
+
+								<div class="wc-proceed-to-checkout">
+
+									<button ng-click="order.purchase()" class="checkout-button button alt wc-forward">
+										Đặt Hàng</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</th:block>
+				<th:block th:unless="${#request.remoteUser}">
+
+					<div class="col-1">
+						<form th:action="@{/home/account/save}" method="post" th:object="${accounts}">
+							<div class="woocommerce-billing-fields">
+								<h3>Đăng Ký Tài Khoản</h3>
+								<div th:text="${message}"
+									style="color: red; font-variant: inherit; font-style: italic;"></div>
+								<div class="woocommerce-billing-fields__field-wrapper">
+									<div class="alert alert-danger">
+										<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+										<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+										<p th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}"></p>
+										<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+										<p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>
+										<p th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></p>
+									</div>
+
+									<p class="form-row form-row-first validate-required">
+										<label for="billing_first_name" class="">Username&nbsp;<abbr class="required"
+												title="required">*</abbr></label><span
+											class="woocommerce-input-wrapper"><br />
+											<input type="text" class="input-text fill_inited" th:field="*{username}"
+												value="" placeholder="" autocomplete="given-name"></span>
+
+									</p>
+									<p class="form-row form-row-first validate-required">
+										<label for="billing_first_name" class="">Password&nbsp;<abbr class="required"
+												title="required">*</abbr></label><span
+											class="woocommerce-input-wrapper"><br /> <input type="text"
+												class="input-text fill_inited" th:field="*{password}" value=""
+												placeholder="" autocomplete="given-name"></span>
+									</p>
+
+									<p class="form-row form-row-first validate-required">
+										<label for="billing_first_name" class="">Fullname&nbsp;<abbr class="required"
+												title="required">*</abbr></label><span
+											class="woocommerce-input-wrapper"> <br> <input type="text"
+												class="input-text fill_inited" th:field="*{fullname}" value=""
+												placeholder="" autocomplete="given-name"></span>
+									</p>
+
+									<p class="form-row form-row-first validate-required">
+										<label for="billing_first_name" class="">Email&nbsp;<abbr class="required"
+												title="required">*</abbr></label><span
+											class="woocommerce-input-wrapper"> <br> <input type="text"
+												class="input-text fill_inited" th:field="*{email}" placeholder=""
+												value="" autocomplete="given-name"></span>
+									</p>
+
+									<p class="form-row form-row-first validate-required">
+										<label for="billing_first_name" class="">Phone&nbsp;<abbr class="required"
+												title="required">*</abbr></label><span
+											class="woocommerce-input-wrapper"> <br> <input type="text"
+												class="input-text fill_inited" th:field="*{phone}" placeholder=""
+												value="" autocomplete="given-name"></span>
+									</p>
+
+									<p class="form-row form-row-first validate-required">
+										<label for="billing_first_name" class="">Address&nbsp;<abbr class="required"
+												title="required">*</abbr></label><span
+											class="woocommerce-input-wrapper"> <br> <input type="text"
+												class="input-text fill_inited" th:field="*{address}" value=""
+												autocomplete="given-name"></span>
+									</p>
+
+									<div class="wc-proceed-to-checkout">
+
+										<button class="btn btn-primary">
+											<span>Đăng Ký</span>
+										</button>
+										<a href="/security/login/form">Bạn đã có tài khoản ?</a><br />
+									</div>
+
+								</div>
+							</div>
+						</form>
+						<br />
+						<div>
+							Sign in with <br />
+							<a href="/oauth2/authorization/google"><i class="fab fa-google"></i>&nbsp; Google</a> ::
+							<a href="/oauth2/authorization/facebook"><i class="fab fa-facebook-f"></i>
+								&nbsp;Facebook</a>
+						</div>
+					</div>
+
+				</th:block>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+
+<body>
+	<main>
+		<div class="content_wrap">
+			<div class="content">
+				<article th:fragment="shopping_cart" id="post-784"
+					class="post_item_single post_type_page post-784 page type-page status-publish hentry">
+					<div class="post_content entry-content">
+						<div class="vc_row wpb_row vc_row-fluid">
+							<div
+								class="wpb_column vc_column_container vc_col-sm-12 sc_layouts_column_icons_position_left">
+								<div class="vc_column-inner">
+									<div class="wpb_wrapper">
+										<div class="woocommerce">
+											<div class="woocommerce-notices-wrapper"></div>
+											<form class="woocommerce-cart-form">
+
+												<table
+													class="shop_table shop_table_responsive cart woocommerce-cart-form__contents"
+													cellspacing="0">
+													<thead>
+														<tr>
+															<th class="product-remove">&nbsp;</th>
+															<th class="product-thumbnail">&nbsp;</th>
+															<th class="product-name">Product</th>
+															<th class="product-price">Price</th>
+															<th class="product-quantity">Quantity</th>
+															<th class="product-subtotal">Subtotal</th>
+														</tr>
+													</thead>
+													<tbody>
+
+														<tr ng-repeat="item in cart.items"
+															class="woocommerce-cart-form__cart-item cart_item">
+
+															<td class="product-remove"><a
+																ng-click="cart.remove(item.id)" class="remove"
+																aria-label="Remove this item" data-product_id="480"
+																data-product_sku="">x</a></td>
+
+															<td class="product-thumbnail">
+																<img
+																	width="362" height="362"
+																	src="/assets/images/{{item.image}}"
+																	class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+																	alt="" loading="lazy"
+																	sizes="(max-width: 362px) 100vw, 362px">
+															</td>
+
+															<td class="product-name" data-title="Product"><a
+																th:href="@{|/product/detail/{{item.id}}|}">{{item.name}}</a>
+															<td class="product-price" data-title="Price"><span
+																class="woocommerce-Price-amount amount"><bdi>
+																	<span class="woocommerce-Price-currencySymbol">$</span>{{item.price
+																	| number : 2}}</bdi> </span></td>
+
+															<td class="product-quantity" data-title="Quantity">
+																<div class="quantity">
+																	<input ng-change="cart.saveToLocalStorage()"
+																		type="number" ng-model="item.qty" min="1"
+																		style="width: 50px; align-items: center"> <span
+																		class="q_dec"></span>
+																</div>
+															</td>
+
+															<td class="product-subtotal" data-title="Subtotal">
+																<span class="woocommerce-Price-amount amount">
+																	<span class="woocommerce-Price-currencySymbol">$</span>
+																	
+																	<input value="{{item.qty*item.price
+																	| number : 2}} " style="width: 100px" readonly/>
+																</span>
+															</td>
+														</tr>
+
+
+														<tr>
+															<td colspan="6" class="actions">
+
+																<div class="coupon">
+																	<button ng-click="cart.clear()"  class="button">Clear</button>
+																</div>
+
+																<button type="submit" class="button" name="update_cart"
+																	value="Update cart" disabled="" aria-disabled="true">Update
+																	cart</button> <input type="hidden" id="woocommerce-cart-nonce"
+																name="woocommerce-cart-nonce" value="67212e0309"><input
+																type="hidden" name="_wp_http_referer" value="/cart/">
+															</td>
+														</tr>
+
+													</tbody>
+												</table>
+											</form>
+
+
+											<div class="cart-collaterals">
+												<div class="cart_totals ">
+
+
+													<h2>Cart totals</h2>
+
+													<table cellspacing="0"
+														class="shop_table shop_table_responsive">
+
+														<tbody>
+															<tr class="cart-subtotal">
+																<th>Subtotal</th>
+																<td data-title="Subtotal"><span
+																	class="woocommerce-Price-amount amount"><bdi>
+																		<span class="woocommerce-Price-currencySymbol">$</span>
+																		<span>{{cart.amount}}</span></bdi> </span></td>
+															</tr>
+
+
+
+
+
+
+															<tr class="order-total">
+																<th>Total</th>
+																<td data-title="Total"><strong><span
+																		class="woocommerce-Price-amount amount"><bdi>
+																			<span class="woocommerce-Price-currencySymbol">$</span>
+																		<span>{{cart.amount}}</span>
+																		</bdi></span></strong></td>
+															</tr>
+
+
+														</tbody>
+													</table>
+
+													<div class="wc-proceed-to-checkout">
+
+														<a th:href="@{/order/checkout}"
+															class="checkout-button button alt wc-forward">
+															Proceed to checkout</a>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- .entry-content -->
+				</article>
+			</div>
+			<!-- </.content> -->
+			<div class="sidebar left widget_area" role="complementary">
+				<div class="sidebar_inner">
+					<aside id="woocommerce_product_categories-2"
+						class="widget woocommerce widget_product_categories">
+						<h5 class="widget_title">Categories</h5>
+						<div th:replace="/category/_category.html"></div>
+					</aside>
+
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

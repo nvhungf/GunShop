@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+	<div class="panel-heading text-center">IVENTORY</div>
+	<table class="table table-condensed primary">
+		<thead style="font-variant: small-caps">
+			<tr>
+				<th>Category</th>
+				<th>Total Price</th>
+				<th>Gross Product</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in items">
+				<td>{{item.group.name}}</td>
+				<td>$ {{item.sum}}</td>
+				<td>{{item.count}}</td>
+			</tr>
+			
+		</tbody>
+	</table>
+</div>
